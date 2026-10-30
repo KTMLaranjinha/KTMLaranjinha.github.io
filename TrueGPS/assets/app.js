@@ -54,6 +54,7 @@
     tag_example: 'Exemplo', tag_motto: 'Lema',
     t_fame2: 'Hall of Fame · Play Store',
     fame2_lead: 'Palavras que descrevem a TrueGPS Speed. As reviews reais da Play Store vão sendo acrescentadas aqui, com estrelas e autor.',
+    video_playlist: 'Ver a playlist completa no YouTube',
     t_download: 'Descarregar', f_privacy: 'Privacidade', f_contact: 'Contacto'
   };
 
@@ -222,7 +223,9 @@
 
   function carregarVideo() {
     var f = document.createElement('iframe');
-    f.src = 'https://www.youtube-nocookie.com/embed/' + video.dataset.yt + '?autoplay=1&rel=0';
+    var src = 'https://www.youtube-nocookie.com/embed/' + video.dataset.yt + '?autoplay=1&rel=0';
+    if (video.dataset.list) src += '&list=' + video.dataset.list;   // abre o vídeo dentro da playlist
+    f.src = src;
     f.allow = 'autoplay; encrypted-media; picture-in-picture';
     f.allowFullscreen = true;
     f.title = 'TrueGPS Speed';
