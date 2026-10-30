@@ -1,95 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>🚧TrueGPS Speed</title>
-
-    <style>
-        body {
-            margin: 0;
-            min-height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: #0b0f14;
-            color: white;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-
-        .container {
-            max-width: 700px;
-            padding: 40px 25px;
-        }
-
-        h1 {
-            font-size: 48px;
-            margin-bottom: 10px;
-        }
-
-        .subtitle {
-            font-size: 22px;
-            color: #aaa;
-            margin-bottom: 40px;
-        }
-
-        .construction {
-            font-size: 28px;
-            margin: 30px 0;
-        }
-
-        .privacy {
-            display: inline-block;
-            margin-top: 30px;
-            padding: 12px 22px;
-            border: 1px solid #555;
-            border-radius: 8px;
-            color: white;
-            text-decoration: none;
-        }
-
-        .privacy:hover {
-            background: #1c2430;
-        }
-
-        .footer {
-            margin-top: 60px;
-            color: #666;
-            font-size: 14px;
-        }
-    </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TrueGPS Speed – Your speed. Your HUD. Your way.</title>
+<meta name="description" content="TrueGPS Speed: a professional GPS speedometer and HUD for Android, built for drivers who like things their way.">
+<meta property="og:title" content="TrueGPS Speed">
+<meta property="og:description" content="Your speed. Your HUD. Your way.">
+<meta property="og:image" content="assets/logo.png">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Chakra+Petch:wght@500;700&family=Manrope:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
 </head>
-
 <body>
+<header class="top">
+  <a class="brand" href="#home"><img src="assets/logo.png" alt="" width="32" height="32" onerror="this.style.display='none'">TrueGPS Speed</a>
+  <nav>
+    <a href="#home" data-i18n="nav_home">Home</a>
+    <a href="#features" data-i18n="nav_features">Features</a>
+    <a href="#media" data-i18n="nav_media">Media</a>
+    <a href="#premium" data-i18n="nav_premium">Premium</a>
+    <a href="#fame" data-i18n="nav_fame">Hall of Fame</a>
+    <a href="#changelog" data-i18n="nav_changelog">Changelog</a>
+    <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    <a href="#download" data-i18n="nav_download">Download</a>
+  </nav>
+  <select id="lang" aria-label="Language"></select>
+  <button id="theme" aria-label="Toggle light/dark theme">◐</button>
+</header>
 
-<div class="container">
-
-    <h1>TrueGPS Speed</h1>
-
-    <div class="subtitle">
-        GPS Speed, calibrated to your vehicle.
+<main>
+<section id="home" class="hero">
+  <div class="hero-text">
+    <h1 data-i18n="hero_title">Your speed.<br>Your HUD.<br>Your way.</h1>
+    <p data-i18n="hero_sub">A professional GPS speedometer and HUD for Android. Not just another speedometer: full control over how your speed looks.</p>
+    <div class="cta">
+      <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed" data-i18n="cta_play">Download on Google Play</a>
+      <a class="btn" href="#video" data-i18n="cta_watch">Watch video</a>
     </div>
+  </div>
+  <div class="hud" aria-hidden="true"><span class="hud-n">126</span><span class="hud-u">km/h</span><i class="hud-bar"></i></div>
+</section>
 
-    <div class="construction">
-        🚧 Website under construction 🚧
+<section id="features">
+  <h2 data-i18n="t_features">Features</h2>
+  <div class="grid">
+    <article class="card"><h3>Fully customizable HUD</h3><p>Build your own layout: colors, fonts and widgets.</p></article>
+    <article class="card"><h3>Speed calibration</h3><p>Match the speed shown to your car’s own speedometer.</p></article>
+    <article class="card"><h3>Stable GPS</h3><p>Smooth, responsive speed readings.</p></article>
+    <article class="card"><h3>Themes</h3><p>Switch the whole look in one tap.</p></article>
+    <article class="card"><h3>Export and import</h3><p>Back up and share your HUD layouts.</p></article>
+    <article class="card"><h3>Vehicle profiles</h3><p>Save settings for each of your vehicles.</p></article>
+  </div>
+  <p class="note">Replace these cards with the feature text from your Play Store page.</p>
+</section>
+
+<section id="media">
+  <h2 data-i18n="t_media">Screenshots and video</h2>
+  <div class="carousel">
+    <button class="arrow prev" aria-label="Previous">‹</button>
+    <div class="track" id="shots">
+      <figure class="phone"><div class="scr" style="--img:url(assets/shots/01.jpg)"></div><figcaption>Main speedometer</figcaption></figure>
+      <figure class="phone"><div class="scr" style="--img:url(assets/shots/02.jpg)"></div><figcaption>HUD mode</figcaption></figure>
+      <figure class="phone"><div class="scr" style="--img:url(assets/shots/03.jpg)"></div><figcaption>Widgets</figcaption></figure>
+      <figure class="phone"><div class="scr" style="--img:url(assets/shots/04.jpg)"></div><figcaption>Themes</figcaption></figure>
+      <figure class="phone"><div class="scr" style="--img:url(assets/shots/05.jpg)"></div><figcaption>Calibration</figcaption></figure>
+      <figure class="phone"><div class="scr" style="--img:url(assets/shots/06.jpg)"></div><figcaption>Premium</figcaption></figure>
     </div>
+    <button class="arrow next" aria-label="Next">›</button>
+  </div>
+  <div class="dots" id="dots"></div>
 
-    <p>
-        The official TrueGPS Speed website is currently being prepared.
-    </p>
+  <div id="video" class="video" data-yt="USXWu43mxAE" role="button" tabindex="0" aria-label="Play video" style="--poster:url(https://i.ytimg.com/vi/USXWu43mxAE/hqdefault.jpg)"><span class="play">▶</span></div>
+</section>
 
-    <a class="privacy"
-       href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/#en">
-        Privacy Policy
-    </a>
+<section id="premium">
+  <h2 data-i18n="t_premium">Premium</h2>
+  <div class="grid two">
+    <article class="card"><h3>Free</h3><p class="price">0 €</p><p>Core speedometer and HUD, with ads.</p></article>
+    <article class="card hot"><h3>Premium</h3><p class="price">— €</p><p>Prices are set in Google Play and shown there. Add monthly / yearly plans here.</p></article>
+  </div>
+</section>
 
-    <div class="footer">
-        © 2026 TrueGPS Speed
-    </div>
+<section id="fame">
+  <h2 data-i18n="t_fame">Hall of Fame</h2>
+  <p class="lead" data-i18n="fame_lead">Reviews we would love to earn. These are examples of the experience we aim for, not real user reviews. Real ones will replace them.</p>
+  <div class="grid">
+    <blockquote class="card"><span class="tag">Example</span>★★★★★<p>“I tried five GPS speedometers before this one. It was the only one I could set up exactly how I wanted.”</p></blockquote>
+    <blockquote class="card"><span class="tag">Example</span>★★★★★<p>“Calibrating the speed to match my car’s dashboard made me drop the app I had used for years.”</p></blockquote>
+    <blockquote class="card"><span class="tag">Example</span>★★★★★<p>“An Android app that looks like it was made in 2026, not 2016.”</p></blockquote>
+  </div>
+</section>
 
-</div>
+<section id="changelog">
+  <h2 data-i18n="t_changelog">Changelog and roadmap</h2>
+  <div class="grid two">
+    <article class="card">
+      <h3>Version 1.0</h3>
+      <h4>Added</h4><ul><li>Speedometer and HUD</li><li>Widgets and themes</li><li>Premium</li></ul>
+      <h4>Changed</h4><ul><li>—</li></ul>
+      <h4>Fixed</h4><ul><li>—</li></ul>
+    </article>
+    <article class="card">
+      <h3>Roadmap</h3>
+      <ul class="road">
+        <li class="done">Speedometer</li><li class="done">Widgets</li><li class="done">Premium</li><li class="done">Themes</li>
+        <li>Maps</li><li>Trips</li><li>Radar warnings</li><li>OBD</li><li>Android Auto</li>
+      </ul>
+    </article>
+  </div>
+</section>
 
+<section id="faq">
+  <h2 data-i18n="t_faq">FAQ</h2>
+  <details><summary>How accurate is the GPS?</summary><p>Add your answer here.</p></details>
+  <details><summary>Can I use it in HUD mode?</summary><p>Yes. Add details here.</p></details>
+  <details><summary>Does it work offline?</summary><p>Add your answer here.</p></details>
+  <h3 class="sub">Quick manual: create a HUD</h3>
+  <ol class="steps"><li>Press +</li><li>Choose a layout</li><li>Customize it</li><li>Save</li></ol>
+</section>
+
+<section id="download" class="dl">
+  <h2 data-i18n="t_download">Download</h2>
+  <a class="btn primary big" href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed" data-i18n="cta_play">Download on Google Play</a>
+  <p class="note">Later: wallpapers, logos, QR code, PDFs.</p>
+</section>
+</main>
+
+<footer>
+  <div class="links">
+    <a href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed">Google Play</a>
+    <a href="https://www.youtube.com/@TrueGPSSpeed">YouTube</a>
+    <a href="https://github.com/KTMLaranjinha">GitHub</a>
+    <a href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/" data-i18n="f_privacy">Privacy</a>
+    <a href="mailto:EMAIL_AQUI" data-i18n="f_contact">Contact</a>
+    <a href="#" data-todo>Patreon</a>
+    <a href="#" data-todo>PayPal</a>
+    <a href="#" data-todo>Amazon</a>
+  </div>
+  <p>© 2026 TrueGPS Speed</p>
+</footer>
+<script src="assets/app.js"></script>
 </body>
 </html>
