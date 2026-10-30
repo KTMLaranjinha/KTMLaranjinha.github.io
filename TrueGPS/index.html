@@ -48,7 +48,11 @@
       <a class="btn" href="#video" data-i18n="cta_watch">Watch video</a>
     </div>
   </div>
-  <div class="hud" aria-hidden="true"><span class="hud-n">126</span><span class="hud-u">km/h</span><i class="hud-bar"></i></div>
+  <!-- Logo grande: logo.png (letras brancas) no escuro, logo0.png no claro -->
+  <div class="hero-art">
+    <img class="logo-dark hero-logo" src="assets/logo.png" alt="TrueGPS Speed">
+    <img class="logo-light hero-logo" src="assets/logo0.png" alt="TrueGPS Speed">
+  </div>
 </section>
 
 <!-- ============ FEATURES: um <article class="card"> por funcionalidade ============ -->
@@ -68,23 +72,29 @@
 <!-- ============ MULTIMÉDIA: screenshots e vídeo ============ -->
 <section id="media">
   <h2 data-i18n="t_media">Screenshots and video</h2>
-  <div class="carousel" data-autoplay="5000">
-    <button class="arrow prev" aria-label="Previous">‹</button>
-    <div class="track" id="shots">
-      <!-- Para acrescentar um screenshot: copia uma linha <figure> e muda o nome da imagem. Clicar abre a imagem grande. -->
-      <figure class="shot"><img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1"></figure>
-      <figure class="shot"><img src="assets/shots/02.jpg" alt="TrueGPS Speed screenshot 2" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/shots/03.jpg" alt="TrueGPS Speed screenshot 3" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/shots/04.jpg" alt="TrueGPS Speed screenshot 4" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/shots/05.jpg" alt="TrueGPS Speed screenshot 5" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/shots/06.jpg" alt="TrueGPS Speed screenshot 6" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/shots/07.jpg" alt="TrueGPS Speed screenshot 7" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/shots/08.jpg" alt="TrueGPS Speed screenshot 8" loading="lazy"></figure>
-      <figure class="shot"><img src="assets/shots/09.jpg" alt="TrueGPS Speed screenshot 9" loading="lazy"></figure>
+  <div class="gallery" id="gallery" data-autoplay="5000" tabindex="0">
+
+    <!-- Imagem grande (muda ao clicar numa miniatura, nas setas, com swipe ou com as teclas ← →) -->
+    <div class="stage">
+      <button class="arrow prev" aria-label="Previous">‹</button>
+      <img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1">
+      <button class="arrow next" aria-label="Next">›</button>
     </div>
-    <button class="arrow next" aria-label="Next">›</button>
+
+    <!-- Miniaturas. Para acrescentar um screenshot: copia uma linha <button> e muda o nome da imagem. -->
+    <div class="thumbs">
+      <button class="thumb" aria-label="Screenshot 1"><img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 2"><img src="assets/shots/02.jpg" alt="TrueGPS Speed screenshot 2" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 3"><img src="assets/shots/03.jpg" alt="TrueGPS Speed screenshot 3" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 4"><img src="assets/shots/04.jpg" alt="TrueGPS Speed screenshot 4" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 5"><img src="assets/shots/05.jpg" alt="TrueGPS Speed screenshot 5" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 6"><img src="assets/shots/06.jpg" alt="TrueGPS Speed screenshot 6" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 7"><img src="assets/shots/07.jpg" alt="TrueGPS Speed screenshot 7" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 8"><img src="assets/shots/08.jpg" alt="TrueGPS Speed screenshot 8" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 9"><img src="assets/shots/09.jpg" alt="TrueGPS Speed screenshot 9" loading="lazy"></button>
+    </div>
+
   </div>
-  <div class="dots"></div>
 
   <div id="video" class="video" data-yt="USXWu43mxAE" role="button" tabindex="0" aria-label="Play video" style="--poster:url(https://i.ytimg.com/vi/USXWu43mxAE/hqdefault.jpg)"><span class="play">▶</span></div>
 </section>
@@ -371,14 +381,6 @@
   </div>
   <p>© 2026 TrueGPS Speed</p>
 </footer>
-<!-- ============ JANELA DA IMAGEM GRANDE (abre ao clicar num screenshot) ============ -->
-<div id="lightbox" hidden>
-  <button class="lb-btn lb-close" aria-label="Close">×</button>
-  <button class="lb-btn lb-prev" aria-label="Previous">‹</button>
-  <img alt="">
-  <button class="lb-btn lb-next" aria-label="Next">›</button>
-</div>
-
 <script src="assets/app.js"></script>
 </body>
 </html>

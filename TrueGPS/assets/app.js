@@ -1,6 +1,6 @@
 /* =========================================================
    TrueGPS Speed – comportamento do site
-   1) Atalhos   2) Línguas   3) Tema   4) Carrosseis e imagem grande   5) Vídeo
+   1) Atalhos   2) Línguas   3) Tema   4) Galeria e carrosseis   5) Vídeo
    ========================================================= */
 (function () {
 
@@ -119,99 +119,102 @@
   };
 
 
-  /* ---------- 4) CARROSSEIS (screenshots, Hall of Fame, ...) ----------
-     Funciona para qualquer <div class="carousel"> do HTML: setas, swipe,
-     bolinhas (se existir <div class="dots"> logo a seguir) e autoplay
-     (se tiver data-autoplay="5000", em milissegundos).                  */
-  function iniciarCarrossel(box) {
-    var track  = box.querySelector('.track');
-    var slides = [].slice.call(track.children).filter(function (el) { return el.nodeType === 1; });
-    var dots   = box.nextElementSibling;
-    if (dots && !dots.classList.contains('dots')) dots = null;
-    var atual  = 0;
+  /* ---------- 4) GALERIA DE SCREENSHOTS ----------
+     Imagem grande + miniaturas. Muda com: clique na miniatura, setas,
+     swipe (telemóvel), teclas ← → e autoplay lento.
+     Para acrescentar um screenshot basta acrescentar um <button class="thumb">
+     no HTML: o resto ajusta-se sozinho.                                      */
+  function iniciarGaleria(box) {
+    var principal = box.querySelector('.stage img');
+    var barra     = box.querySelector('.thumbs');
+    var thumbs    = [].slice.call(box.querySelectorAll('.thumb'));
+    var atual     = 0;
+    var timer;
 
-    // uma bolinha por slide
-    if (dots) slides.forEach(function () { dots.appendChild(document.createElement('i')); });
+    // mostra o screenshot número i (volta ao início no fim)
+    function mostrar(i) {
+      atual = (i + thumbs.length) % thumbs.length;
+      var origem = thumbs[atual].querySelector('img');
 
-    // posição do slide i relativamente ao track
-    function centroDe(s) {
-      return s.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft + s.clientWidth / 2;
+      principal.src = origem.src;
+      principal.alt = origem.alt;
+      principal.classList.remove('fade');       // reinicia a animação de fade
+      void principal.offsetWidth;
+      principal.classList.add('fade');
+
+      thumbs.forEach(function (t, k) { t.classList.toggle('on', k === atual); });
+
+      // mantém a miniatura ativa centrada na barra
+      var t = thumbs[atual];
+      barra.scrollTo({ left: t.offsetLeft - (barra.clientWidth - t.clientWidth) / 2, behavior: 'smooth' });
     }
 
-    // desliza até ao slide i (volta ao início no fim)
-    function go(i) {
-      atual = (i + slides.length) % slides.length;
-      track.scrollTo({ left: centroDe(slides[atual]) - track.clientWidth / 2, behavior: 'smooth' });
-    }
+    function parar() { clearInterval(timer); }
 
-    // descobre qual o slide mais ao centro e destaca a bolinha
-    function marcar() {
-      var centro = track.scrollLeft + track.clientWidth / 2, melhor = 0, menor = 1e9;
-      slides.forEach(function (s, i) {
-        var d = Math.abs(centroDe(s) - centro);
-        if (d < menor) { menor = d; melhor = i; }
-      });
-      atual = melhor;
-      if (dots) [].slice.call(dots.children).forEach(function (d, i) { d.classList.toggle('on', i === melhor); });
-    }
+    // clique manual: mostra e pára o autoplay
+    function manual(i) { parar(); mostrar(i); }
 
-    track.addEventListener('scroll', marcar, { passive: true });
-    marcar();
+    box.querySelector('.prev').onclick = function () { manual(atual - 1); };
+    box.querySelector('.next').onclick = function () { manual(atual + 1); };
+    thumbs.forEach(function (t, i) { t.onclick = function () { manual(i); }; });
 
-    box.querySelector('.prev').onclick = function () { go(atual - 1); };
-    box.querySelector('.next').onclick = function () { go(atual + 1); };
-    if (dots) [].slice.call(dots.children).forEach(function (d, i) { d.onclick = function () { go(i); }; });
+    // swipe na imagem grande
+    var x0 = null;
+    principal.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; parar(); }, { passive: true });
+    principal.addEventListener('touchend', function (e) {
+      if (x0 === null) return;
+      var dx = e.changedTouches[0].clientX - x0;
+      if (Math.abs(dx) > 40) mostrar(atual + (dx < 0 ? 1 : -1));
+      x0 = null;
+    }, { passive: true });
 
-    // Autoplay lento. Pára com rato/toque e se o sistema pede menos animações.
+    // teclas ← → (quando o rato está sobre a galeria ou ela tem o foco)
+    var ativa = false;
+    box.addEventListener('mouseenter', function () { ativa = true; parar(); });
+    box.addEventListener('mouseleave', function () { ativa = false; });
+    box.addEventListener('focusin',    function () { ativa = true; parar(); });
+    box.addEventListener('focusout',   function () { ativa = false; });
+    document.addEventListener('keydown', function (e) {
+      if (!ativa) return;
+      if (e.key === 'ArrowLeft')  { e.preventDefault(); manual(atual - 1); }
+      if (e.key === 'ArrowRight') { e.preventDefault(); manual(atual + 1); }
+    });
+
+    // autoplay lento (se o sistema não pedir menos animações)
     var ms = parseInt(box.dataset.autoplay, 10);
-    var menosMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (ms && !menosMovimento) {
-      var timer = setInterval(function () { go(atual + 1); }, ms);
-      ['mouseenter', 'touchstart', 'focusin'].forEach(function (ev) {
-        box.addEventListener(ev, function () { clearInterval(timer); }, { passive: true });
-      });
+    if (ms && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      timer = setInterval(function () { mostrar(atual + 1); }, ms);
     }
+
+    mostrar(0);
+  }
+  $$('.gallery').forEach(iniciarGaleria);
+
+
+  /* ---------- 4b) CARROSSEIS DE COMENTÁRIOS (Hall of Fame) ----------
+     Cada <div class="carousel"> tem setas e swipe. As setas andam um cartão
+     de cada vez e voltam ao início/fim quando chegam ao limite.             */
+  function iniciarCarrossel(box) {
+    var track = box.querySelector('.track');
+
+    function passo() {
+      var primeiro = track.children[0];
+      return primeiro.getBoundingClientRect().width + 24;   // largura do cartão + espaço
+    }
+    function mover(dir) {
+      var fim = track.scrollWidth - track.clientWidth - 4;
+      if (dir > 0 && track.scrollLeft >= fim) { track.scrollTo({ left: 0, behavior: 'smooth' }); return; }
+      if (dir < 0 && track.scrollLeft <= 4)   { track.scrollTo({ left: fim, behavior: 'smooth' }); return; }
+      track.scrollBy({ left: dir * passo(), behavior: 'smooth' });
+    }
+
+    box.querySelector('.prev').onclick = function () { mover(-1); };
+    box.querySelector('.next').onclick = function () { mover(1); };
   }
   $$('.carousel').forEach(iniciarCarrossel);
 
-
-  /* ---------- 4b) JANELA DA IMAGEM GRANDE (lightbox) ---------- */
-  var lb    = $('#lightbox');
-  var lbImg = lb.querySelector('img');
-  var fotos = $$('#shots img');
-  var lbAtual = 0;
-
-  function abrirFoto(i) {
-    lbAtual = (i + fotos.length) % fotos.length;
-    lbImg.src = fotos[lbAtual].src;
-    lbImg.alt = fotos[lbAtual].alt;
-    lb.hidden = false;
-    document.body.style.overflow = 'hidden';   // impede o scroll da página por trás
-  }
-  function fecharFoto() { lb.hidden = true; document.body.style.overflow = ''; }
-
-  fotos.forEach(function (f, i) { f.onclick = function () { abrirFoto(i); }; });
-  lb.querySelector('.lb-close').onclick = fecharFoto;
-  lb.querySelector('.lb-prev').onclick  = function () { abrirFoto(lbAtual - 1); };
-  lb.querySelector('.lb-next').onclick  = function () { abrirFoto(lbAtual + 1); };
-  lb.onclick = function (e) { if (e.target === lb) fecharFoto(); };   // clicar no fundo fecha
-
-  document.addEventListener('keydown', function (e) {
-    if (lb.hidden) return;
-    if (e.key === 'Escape')     fecharFoto();
-    if (e.key === 'ArrowLeft')  abrirFoto(lbAtual - 1);
-    if (e.key === 'ArrowRight') abrirFoto(lbAtual + 1);
-  });
-
-  // swipe no telemóvel
-  var x0 = null;
-  lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
-  lb.addEventListener('touchend', function (e) {
-    if (x0 === null) return;
-    var dx = e.changedTouches[0].clientX - x0;
-    if (Math.abs(dx) > 50) abrirFoto(lbAtual + (dx < 0 ? 1 : -1));
-    x0 = null;
-  }, { passive: true });
+  // permite ler os comentários compridos com o teclado (Tab + setas ↑ ↓)
+  $$('.track blockquote p').forEach(function (p) { p.tabIndex = 0; });
 
 
   /* ---------- 5) VÍDEO: o YouTube só carrega ao clicar ---------- */
