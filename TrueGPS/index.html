@@ -17,7 +17,11 @@
 <body>
 <!-- ============ CABEÇALHO: logótipo, menu, língua, tema ============ -->
 <header class="top">
-  <a class="brand" href="#home"><img class="logo" src="assets/logo.png" alt="TrueGPS Speed" height="36"></a>
+  <a class="brand" href="#home">
+    <!-- logo.png = letras brancas (tema escuro) | logo0.png = tema claro -->
+    <img class="logo logo-dark" src="assets/logo.png" alt="TrueGPS Speed" height="36">
+    <img class="logo logo-light" src="assets/logo0.png" alt="TrueGPS Speed" height="36">
+  </a>
   <nav>
     <a href="#home" data-i18n="nav_home">Home</a>
     <a href="#features" data-i18n="nav_features">Features</a>
@@ -64,23 +68,23 @@
 <!-- ============ MULTIMÉDIA: screenshots e vídeo ============ -->
 <section id="media">
   <h2 data-i18n="t_media">Screenshots and video</h2>
-  <div class="carousel">
+  <div class="carousel" data-autoplay="5000">
     <button class="arrow prev" aria-label="Previous">‹</button>
     <div class="track" id="shots">
-      <!-- Para acrescentar um screenshot: copia uma linha <figure> e muda o nome da imagem -->
-      <figure class="phone"><img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1"></figure>
-      <figure class="phone"><img src="assets/shots/02.jpg" alt="TrueGPS Speed screenshot 2" loading="lazy"></figure>
-      <figure class="phone"><img src="assets/shots/03.jpg" alt="TrueGPS Speed screenshot 3" loading="lazy"></figure>
-      <figure class="phone"><img src="assets/shots/04.jpg" alt="TrueGPS Speed screenshot 4" loading="lazy"></figure>
-      <figure class="phone"><img src="assets/shots/05.jpg" alt="TrueGPS Speed screenshot 5" loading="lazy"></figure>
-      <figure class="phone"><img src="assets/shots/06.jpg" alt="TrueGPS Speed screenshot 6" loading="lazy"></figure>
-      <figure class="phone"><img src="assets/shots/07.jpg" alt="TrueGPS Speed screenshot 7" loading="lazy"></figure>
-      <figure class="phone"><img src="assets/shots/08.jpg" alt="TrueGPS Speed screenshot 8" loading="lazy"></figure>
-      <figure class="phone"><img src="assets/shots/09.jpg" alt="TrueGPS Speed screenshot 9" loading="lazy"></figure>
+      <!-- Para acrescentar um screenshot: copia uma linha <figure> e muda o nome da imagem. Clicar abre a imagem grande. -->
+      <figure class="shot"><img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1"></figure>
+      <figure class="shot"><img src="assets/shots/02.jpg" alt="TrueGPS Speed screenshot 2" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/shots/03.jpg" alt="TrueGPS Speed screenshot 3" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/shots/04.jpg" alt="TrueGPS Speed screenshot 4" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/shots/05.jpg" alt="TrueGPS Speed screenshot 5" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/shots/06.jpg" alt="TrueGPS Speed screenshot 6" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/shots/07.jpg" alt="TrueGPS Speed screenshot 7" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/shots/08.jpg" alt="TrueGPS Speed screenshot 8" loading="lazy"></figure>
+      <figure class="shot"><img src="assets/shots/09.jpg" alt="TrueGPS Speed screenshot 9" loading="lazy"></figure>
     </div>
     <button class="arrow next" aria-label="Next">›</button>
   </div>
-  <div class="dots" id="dots"></div>
+  <div class="dots"></div>
 
   <div id="video" class="video" data-yt="USXWu43mxAE" role="button" tabindex="0" aria-label="Play video" style="--poster:url(https://i.ytimg.com/vi/USXWu43mxAE/hqdefault.jpg)"><span class="play">▶</span></div>
 </section>
@@ -94,14 +98,186 @@
   </div>
 </section>
 
-<!-- ============ HALL OF FAME: trocar exemplos por comentários reais ============ -->
+<!-- ============ HALL OF FAME: exemplos (fase 1), trocar por comentários reais ============ -->
 <section id="fame">
   <h2 data-i18n="t_fame">Hall of Fame</h2>
   <p class="lead" data-i18n="fame_lead">Reviews we would love to earn. These are examples of the experience we aim for, not real user reviews. Real ones will replace them.</p>
-  <div class="grid">
-    <blockquote class="card"><span class="tag">Example</span>★★★★★<p>“I tried five GPS speedometers before this one. It was the only one I could set up exactly how I wanted.”</p></blockquote>
-    <blockquote class="card"><span class="tag">Example</span>★★★★★<p>“Calibrating the speed to match my car’s dashboard made me drop the app I had used for years.”</p></blockquote>
-    <blockquote class="card"><span class="tag">Example</span>★★★★★<p>“An Android app that looks like it was made in 2026, not 2016.”</p></blockquote>
+  <div class="carousel">
+    <button class="arrow prev" aria-label="Previous">‹</button>
+    <div class="track">
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <p>“Experimentei várias apps e fiquei com a TrueGPS Speed porque é a única que consigo configurar exatamente como quero.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador que experimentou tudo</h3>
+      <p>“Experimentei umas cinco aplicações de velocímetro GPS antes desta. A TrueGPS Speed foi a única que consegui configurar exatamente como queria. Ficou instalada.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O fã da personalização</h3>
+      <p>“Finalmente uma aplicação onde não tenho de aceitar o layout imposto pelo programador. Aqui consigo adaptar praticamente tudo ao meu gosto.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador de HUD</h3>
+      <p>“Uso HUD há anos e esta é das poucas aplicações que parece ter sido pensada para quem realmente conduz com projeção no para-brisas.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador Tesla</h3>
+      <p>“A possibilidade de calibrar a velocidade para coincidir com o velocímetro do carro fez-me abandonar a aplicação que usava há anos.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador exigente</h3>
+      <p>“Percebe-se que quem desenvolveu esta aplicação também a utiliza. Há muitos pequenos detalhes que fazem toda a diferença.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador técnico</h3>
+      <p>“Não é apenas mais um velocímetro GPS. É uma ferramenta bastante completa para quem gosta de personalizar tudo.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador casual</h3>
+      <p>“Instalei por curiosidade e acabou por substituir definitivamente a minha aplicação anterior.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador que gosta do visual</h3>
+      <p>“Interface muito limpa e moderna. Dá gosto olhar para o ecrã.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador Android</h3>
+      <p>“Finalmente uma aplicação Android que parece feita em 2026 e não em 2016.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O fã dos detalhes</h3>
+      <p>“Os pequenos detalhes fazem toda a diferença. As animações, os gestos e a facilidade de configuração tornam esta app excelente.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador de viagens</h3>
+      <p>“Faço muitos quilómetros por semana e esta aplicação tornou-se presença obrigatória sempre que conduzo.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador premium</h3>
+      <p>“Valeu a pena comprar a versão Premium. Nota-se que há desenvolvimento contínuo e novas funcionalidades.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador que gosta de configurar</h3>
+      <p>“Se gostas de personalizar tudo ao teu gosto, dificilmente encontras melhor.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador das atualizações</h3>
+      <p>“O programador está constantemente a melhorar a aplicação. É raro ver este nível de dedicação.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador surpreendido</h3>
+      <p>“Esperava apenas um velocímetro GPS. Encontrei uma aplicação muito mais completa.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador minimalista</h3>
+      <p>“Consegue ser muito completa sem deixar de ser simples de utilizar.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador da precisão</h3>
+      <p>“GPS muito estável e a calibração faz realmente diferença.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador antigo</h3>
+      <p>“Uso aplicações deste género há mais de dez anos. Esta é facilmente uma das melhores que encontrei.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O utilizador da comunidade</h3>
+      <p>“É daquelas aplicações em que sentimos que o feedback dos utilizadores é realmente ouvido.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-hidden="true">★★★★★</span>
+      <h3>O comentário que eu adorava ler 😄</h3>
+      <p>“Não é a aplicação com mais downloads. É simplesmente a melhor que experimentei.”</p>
+    </blockquote>
+    </div>
+    <button class="arrow next" aria-label="Next">›</button>
+  </div>
+</section>
+
+<!-- ============ HALL OF FAME PLAY STORE: reviews reais, preparada para crescer ============ -->
+<section id="fame-play">
+  <h2 data-i18n="t_fame2">Hall of Fame · Play Store</h2>
+  <p class="lead" data-i18n="fame2_lead">Words that describe TrueGPS Speed. Real Play Store reviews will be added here, each with its stars and author.</p>
+  <div class="carousel">
+    <button class="arrow prev" aria-label="Previous">‹</button>
+    <div class="track">
+      <!-- PARA ACRESCENTAR UMA REVIEW REAL: copia um bloco <blockquote> e muda
+           1) o texto  2) as estrelas  3) o autor (<h3>)  4) a etiqueta: class="tag real" e o texto Play Store -->
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <p>“Uso Android Auto todos os dias no meu carro e nunca encontrava um HUD que me agradasse. Instalei a TrueGPS Speed sem grandes expectativas e passados cinco minutos já estava a criar o meu próprio layout. Desde esse dia nunca mais utilizei outra aplicação.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <p>“Achei que era apenas mais um velocímetro GPS. Quando descobri que podia calibrar a velocidade para coincidir com o painel do meu carro, percebi que esta aplicação era diferente.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <p>“Depois de configurar as cores, o tipo de letra e o HUD exatamente como queria, tornou-se impossível voltar às outras aplicações.”</p>
+    </blockquote>
+    <blockquote class="card" lang="en">
+      <span class="tag" data-i18n="tag_motto">Motto</span>
+      <p>“Built for Power Users. Simple enough for everyone.”</p>
+    </blockquote>
+    <blockquote class="card" lang="en">
+      <span class="tag" data-i18n="tag_motto">Motto</span>
+      <p>“Designed for drivers who like things their way.”</p>
+    </blockquote>
+    <blockquote class="card" lang="en">
+      <span class="tag" data-i18n="tag_motto">Motto</span>
+      <p>“Not just another GPS speedometer.”</p>
+    </blockquote>
+    <blockquote class="card" lang="en">
+      <span class="tag" data-i18n="tag_motto">Motto</span>
+      <p>“Your speed. Your HUD. Your way.”</p>
+    </blockquote>
+    <blockquote class="card" lang="pt">
+      <span class="tag" data-i18n="tag_example">Example</span>
+      <p>“TrueGPS Speed parece-me que surgiu não para competir por ser apenas mais um velocímetro, mas por dar ao utilizador controlo e personalização que as outras apps normalmente não oferecem.”</p>
+    </blockquote>
+    </div>
+    <button class="arrow next" aria-label="Next">›</button>
   </div>
 </section>
 
@@ -195,6 +371,14 @@
   </div>
   <p>© 2026 TrueGPS Speed</p>
 </footer>
+<!-- ============ JANELA DA IMAGEM GRANDE (abre ao clicar num screenshot) ============ -->
+<div id="lightbox" hidden>
+  <button class="lb-btn lb-close" aria-label="Close">×</button>
+  <button class="lb-btn lb-prev" aria-label="Previous">‹</button>
+  <img alt="">
+  <button class="lb-btn lb-next" aria-label="Next">›</button>
+</div>
+
 <script src="assets/app.js"></script>
 </body>
 </html>

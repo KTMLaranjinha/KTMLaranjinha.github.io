@@ -1,6 +1,6 @@
 /* =========================================================
    TrueGPS Speed – comportamento do site
-   1) Atalhos   2) Línguas   3) Tema   4) Carrossel   5) Vídeo
+   1) Atalhos   2) Línguas   3) Tema   4) Carrosseis e imagem grande   5) Vídeo
    ========================================================= */
 (function () {
 
@@ -51,6 +51,9 @@
     t_links: 'Apoio e produtos recomendados', t_support: 'Apoia o projeto',
     t_products: 'Produtos recomendados (afiliados)',
     affil_note: 'Links de afiliado: se comprares através deles, ganho uma pequena comissão, sem custo extra para ti. Como Associado da Amazon, obtenho receitas de compras elegíveis.',
+    tag_example: 'Exemplo', tag_motto: 'Lema',
+    t_fame2: 'Hall of Fame · Play Store',
+    fame2_lead: 'Palavras que descrevem a TrueGPS Speed. As reviews reais da Play Store vão sendo acrescentadas aqui, com estrelas e autor.',
     t_download: 'Descarregar', f_privacy: 'Privacidade', f_contact: 'Contacto'
   };
 
@@ -116,56 +119,99 @@
   };
 
 
-  /* ---------- 4) CARROSSEL DE SCREENSHOTS ----------
-     Não precisas de mexer aqui: ao acrescentar um <figure class="phone">
-     no HTML, as bolinhas e o autoplay ajustam-se sozinhos.            */
-  var track  = $('#shots');
-  var slides = $$('#shots .phone');
-  var dots   = $('#dots');
-  var atual  = 0;
+  /* ---------- 4) CARROSSEIS (screenshots, Hall of Fame, ...) ----------
+     Funciona para qualquer <div class="carousel"> do HTML: setas, swipe,
+     bolinhas (se existir <div class="dots"> logo a seguir) e autoplay
+     (se tiver data-autoplay="5000", em milissegundos).                  */
+  function iniciarCarrossel(box) {
+    var track  = box.querySelector('.track');
+    var slides = [].slice.call(track.children).filter(function (el) { return el.nodeType === 1; });
+    var dots   = box.nextElementSibling;
+    if (dots && !dots.classList.contains('dots')) dots = null;
+    var atual  = 0;
 
-  // cria uma bolinha por screenshot
-  slides.forEach(function () { dots.appendChild(document.createElement('i')); });
+    // uma bolinha por slide
+    if (dots) slides.forEach(function () { dots.appendChild(document.createElement('i')); });
 
-  // desliza até ao screenshot número i (e volta ao início no fim)
-  function go(i) {
-    atual = (i + slides.length) % slides.length;
-    var s = slides[atual];
-    track.scrollTo({
-      left: s.offsetLeft - (track.clientWidth - s.clientWidth) / 2,
-      behavior: 'smooth'
-    });
+    // posição do slide i relativamente ao track
+    function centroDe(s) {
+      return s.getBoundingClientRect().left - track.getBoundingClientRect().left + track.scrollLeft + s.clientWidth / 2;
+    }
+
+    // desliza até ao slide i (volta ao início no fim)
+    function go(i) {
+      atual = (i + slides.length) % slides.length;
+      track.scrollTo({ left: centroDe(slides[atual]) - track.clientWidth / 2, behavior: 'smooth' });
+    }
+
+    // descobre qual o slide mais ao centro e destaca a bolinha
+    function marcar() {
+      var centro = track.scrollLeft + track.clientWidth / 2, melhor = 0, menor = 1e9;
+      slides.forEach(function (s, i) {
+        var d = Math.abs(centroDe(s) - centro);
+        if (d < menor) { menor = d; melhor = i; }
+      });
+      atual = melhor;
+      if (dots) [].slice.call(dots.children).forEach(function (d, i) { d.classList.toggle('on', i === melhor); });
+    }
+
+    track.addEventListener('scroll', marcar, { passive: true });
+    marcar();
+
+    box.querySelector('.prev').onclick = function () { go(atual - 1); };
+    box.querySelector('.next').onclick = function () { go(atual + 1); };
+    if (dots) [].slice.call(dots.children).forEach(function (d, i) { d.onclick = function () { go(i); }; });
+
+    // Autoplay lento. Pára com rato/toque e se o sistema pede menos animações.
+    var ms = parseInt(box.dataset.autoplay, 10);
+    var menosMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (ms && !menosMovimento) {
+      var timer = setInterval(function () { go(atual + 1); }, ms);
+      ['mouseenter', 'touchstart', 'focusin'].forEach(function (ev) {
+        box.addEventListener(ev, function () { clearInterval(timer); }, { passive: true });
+      });
+    }
   }
+  $$('.carousel').forEach(iniciarCarrossel);
 
-  // destaca a bolinha do screenshot que está mais ao centro
-  function marcar() {
-    var centro = track.scrollLeft + track.clientWidth / 2;
-    var melhor = 0, menor = 1e9;
-    slides.forEach(function (s, i) {
-      var d = Math.abs(s.offsetLeft + s.clientWidth / 2 - centro);
-      if (d < menor) { menor = d; melhor = i; }
-    });
-    atual = melhor;
-    $$('#dots i').forEach(function (d, i) { d.classList.toggle('on', i === melhor); });
+
+  /* ---------- 4b) JANELA DA IMAGEM GRANDE (lightbox) ---------- */
+  var lb    = $('#lightbox');
+  var lbImg = lb.querySelector('img');
+  var fotos = $$('#shots img');
+  var lbAtual = 0;
+
+  function abrirFoto(i) {
+    lbAtual = (i + fotos.length) % fotos.length;
+    lbImg.src = fotos[lbAtual].src;
+    lbImg.alt = fotos[lbAtual].alt;
+    lb.hidden = false;
+    document.body.style.overflow = 'hidden';   // impede o scroll da página por trás
   }
+  function fecharFoto() { lb.hidden = true; document.body.style.overflow = ''; }
 
-  track.addEventListener('scroll', marcar, { passive: true });
-  marcar();
+  fotos.forEach(function (f, i) { f.onclick = function () { abrirFoto(i); }; });
+  lb.querySelector('.lb-close').onclick = fecharFoto;
+  lb.querySelector('.lb-prev').onclick  = function () { abrirFoto(lbAtual - 1); };
+  lb.querySelector('.lb-next').onclick  = function () { abrirFoto(lbAtual + 1); };
+  lb.onclick = function (e) { if (e.target === lb) fecharFoto(); };   // clicar no fundo fecha
 
-  $('.prev').onclick = function () { go(atual - 1); };
-  $('.next').onclick = function () { go(atual + 1); };
-  $$('#dots i').forEach(function (d, i) { d.onclick = function () { go(i); }; });
-
-  // Autoplay lento (5 s). Pára com rato/toque e se o sistema pede menos animações.
-  var timer;
-  var menosMovimento = matchMedia('(prefers-reduced-motion: reduce)').matches;
-
-  if (!menosMovimento) {
-    timer = setInterval(function () { go(atual + 1); }, 5000);
-  }
-  ['mouseenter', 'touchstart', 'focusin'].forEach(function (ev) {
-    track.parentNode.addEventListener(ev, function () { clearInterval(timer); }, { passive: true });
+  document.addEventListener('keydown', function (e) {
+    if (lb.hidden) return;
+    if (e.key === 'Escape')     fecharFoto();
+    if (e.key === 'ArrowLeft')  abrirFoto(lbAtual - 1);
+    if (e.key === 'ArrowRight') abrirFoto(lbAtual + 1);
   });
+
+  // swipe no telemóvel
+  var x0 = null;
+  lb.addEventListener('touchstart', function (e) { x0 = e.touches[0].clientX; }, { passive: true });
+  lb.addEventListener('touchend', function (e) {
+    if (x0 === null) return;
+    var dx = e.changedTouches[0].clientX - x0;
+    if (Math.abs(dx) > 50) abrirFoto(lbAtual + (dx < 0 ? 1 : -1));
+    x0 = null;
+  }, { passive: true });
 
 
   /* ---------- 5) VÍDEO: o YouTube só carrega ao clicar ---------- */
