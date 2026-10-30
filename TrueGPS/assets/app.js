@@ -38,13 +38,13 @@
   var T = {};
 
   T.pt = {
-    nav_home: 'Início', nav_features: 'Funcionalidades', nav_media: 'Multimédia',
+    nav_home: 'Início', nav_action: 'TrueGPS em Ação', nav_huds: 'HUDs', nav_features: 'Funcionalidades', nav_media: 'Multimédia',
     nav_premium: 'Premium', nav_fame: 'Hall of Fame', nav_changelog: 'Novidades',
     nav_faq: 'FAQ', nav_links: 'Links', nav_download: 'Descarregar',
     hero_title: 'A tua velocidade.<br>O teu HUD.<br>À tua maneira.',
     hero_sub: 'Um velocímetro GPS profissional e HUD para Android. Não é só mais um velocímetro: tens controlo total sobre o aspeto da tua velocidade.',
     cta_play: 'Descarregar na Google Play', cta_watch: 'Ver vídeo',
-    t_features: 'Funcionalidades', t_media: 'Imagens e vídeo', t_premium: 'Premium',
+    t_action: 'TrueGPS em Ação', t_huds: 'HUDs', t_features: 'Funcionalidades', t_media: 'Imagens e vídeo', t_premium: 'Premium',
     t_fame: 'Hall of Fame',
     fame_lead: 'Comentários que gostaríamos de merecer. São exemplos da experiência que queremos proporcionar, não opiniões reais de utilizadores. Os reais vão substituí-los.',
     t_changelog: 'Novidades e roadmap', t_faq: 'FAQ',
