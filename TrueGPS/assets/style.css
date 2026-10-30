@@ -629,3 +629,10 @@ footer {
 .video:has(.video-thumbnail)::after { content:""; position:absolute; inset:0; background:rgba(0,0,0,.28); pointer-events:none; }
 .video .play { position:relative; z-index:1; box-shadow:0 2px 18px #0008; }
 .premium-grid .premium-free { border-top:3px solid #a3a3a3; }
+/* App logo e novas secções de apresentação */
+.cta { align-items:center; }
+.app-icon { width:60px; height:60px; object-fit:cover; border-radius:14px; box-shadow:0 8px 24px rgba(0,0,0,.28); }
+.about-content { max-width:900px; display:grid; gap:16px; }
+.feature-subtitle { margin:0 0 8px; color:var(--pri); font-size:clamp(1.15rem,2.6vw,1.5rem); font-weight:700; line-height:1.45; }
+.about-copy { margin:0; color:var(--tx2); line-height:1.75; font-size:1.03rem; }
+.feature-ending { margin:0; color:var(--tx); line-height:1.6; font-weight:600; }.about-label { margin:0; color:var(--acc); font-family:"Chakra Petch",sans-serif; font-size:1.15rem; font-weight:700; }
