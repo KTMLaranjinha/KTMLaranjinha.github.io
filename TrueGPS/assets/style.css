@@ -600,3 +600,14 @@ footer {
 .thumb.on { border-color:var(--pri); opacity:1; }
 .thumb img { display:block; width:100%; height:100%; object-fit:cover; }
 @media (max-width:760px) { .thumb { flex-basis:92px; } }
+
+/* Cards detalhados de funcionalidades e planos Premium */
+.feature-grid ul { margin:12px 0 0; padding-left:20px; color:var(--tx2); }
+.feature-grid li { margin:7px 0; line-height:1.5; }
+.premium-grid { grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); }
+.premium-grid .card { display:flex; flex-direction:column; gap:12px; }
+.premium-grid .card h3 { min-height:2.2em; }
+.premium-grid .price { margin:0!important; }
+.premium-monthly { border-top:3px solid #22c55e; }
+.premium-yearly { border-top:3px solid #3b82f6; }
+.premium-lifetime { border-top:3px solid #f97316; }
