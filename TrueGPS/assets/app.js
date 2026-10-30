@@ -56,18 +56,7 @@
     fame2_lead: 'Palavras que descrevem a TrueGPS Speed. As reviews reais da Play Store vão sendo acrescentadas aqui, com estrelas e autor.',
     video_playlist: 'Ver a playlist completa no YouTube',
     t_download: 'Descarregar', f_privacy: 'Privacidade', f_contact: 'Contacto',
-    feat_title1: 'A TrueGPS', feat_body1: '<ul><li>Velocímetro GPS e HUD para vários tipos de veículos: carro, moto, bicicleta, barco, avião e outros.</li><li>Pensada para quem quer controlo total, personalização e uma aplicação em constante evolução.</li></ul>',
-    feat_title2: 'Personalização total do HUD', feat_body2: '<ul><li>Cores de fundo para três intervalos de velocidade e milhares de cores à escolha.</li><li>Dezenas de tipos de letra e ajuste livre do tamanho.</li><li>Layouts HUD infinitos e totalmente configuráveis.</li></ul>',
-    feat_title3: 'Perfis de veículo', feat_body3: '<ul><li>Perfis independentes por veículo.</li><li>Custos visíveis por perfil e cálculo instantâneo do custo da viagem.</li><li>Offsets de velocidade diferentes e ajuste fácil da velocidade GPS à velocidade real do velocímetro.</li></ul>',
-    feat_title4: 'Dados, alertas e efeitos', feat_body4: '<ul><li>Gráficos de aceleração e aceleração lateral.</li><li>Alertas visuais e sonoros de limite de velocidade.</li><li>Efeitos gráficos dependentes da velocidade e várias unidades de medida.</li><li>Odómetro e três viagens totalmente configuráveis.</li></ul>',
-    feat_title5: 'Extras que fazem a diferença', feat_body5: '<ul><li>Alterna entre todos os HUDs com um swipe rápido.</li><li>Modo ScreenSaver com frases épicas.</li><li>Exporta e importa HUDs entre amigos.</li></ul>',
-    feat_title6: 'Informação à tua maneira', feat_body6: '<ul><li>Mostra ou oculta hora, viagens, velocidade máxima/média, custos, créditos, limites, GPS, bússola e muito mais.</li><li>Mostra ou oculta widgets individualmente ou todos de uma vez.</li></ul>',
-    feat_title7: 'Interação rápida e inteligente', feat_body7: '<ul><li>Zonas de toque e clique longo configuráveis e visíveis.</li><li>Cria, duplica, apaga e troca HUDs com um toque ou swipe.</li><li>Inverte o HUD para o para-brisas com um swipe.</li></ul>',
-    feat_title8: 'Definições avançadas do HUD', feat_body8: '<ul><li>Controla comportamento geral, tempos de ocultação automática, Safe Mode, brilho, opacidade, temas e idioma da aplicação.</li><li>Personaliza cores, fundos por intervalo de velocidade, estados, alertas, ícones e imagens.</li><li>Configura limites de velocidade, alertas visuais e sonoros e efeitos gráficos, ou desativa-os.</li><li>Configura sons de interação e alertas, ou silencia-os todos.</li><li>Modo Não Incomodar e ScreenSaver opcionais.</li></ul>',
-    feat_title9: 'Créditos e Premium', feat_body9: '<ul><li>Funcionalidades avançadas disponíveis através de Premium ou créditos.</li><li>Algumas alterações críticas podem consumir créditos; podes obter créditos adicionais opcionalmente.</li><li>O custo é sempre mostrado antes da confirmação.</li></ul>',
-    feat_title10: 'Controlos de clique longo', feat_body10: '<ul><li>Bloqueia HUDs para evitar alterações acidentais; os HUDs bloqueados não podem ser editados nem removidos.</li><li>É pedida confirmação explícita para bloquear ou desbloquear.</li><li>Duplica HUDs, cria novos quando permitido ou remove-os permanentemente com confirmação.</li><li>Ações críticas dão feedback visual e sonoro, conforme as definições globais de som.</li></ul>',
-    feat_title11: 'Segurança e controlo do utilizador', feat_body11: '<ul><li>Ações críticas exigem confirmação explícita; nenhuma alteração irreversível é feita silenciosamente.</li><li>O utilizador mantém sempre o controlo final.</li><li>É um auxílio visual e informativo, não substitui os sistemas do veículo e depende dos sensores e permissões do dispositivo.</li><li>Recomenda-se configurar com o veículo parado. O excesso de efeitos pode causar distrações.</li></ul>',
-    feat_title12: 'Nota importante', feat_body12: '<ul><li>A utilização da aplicação é da responsabilidade do utilizador.</li><li>O desenvolvedor não é responsável por multas, incidentes, acidentes, uso indevido ou alterações confirmadas voluntariamente pelo utilizador.</li><li>A aplicação fornece ferramentas, não toma decisões. Utiliza-a por tua conta e risco.</li><li>Para dúvidas, contacta o desenvolvedor por email ou pela página da aplicação na Google Play.</li></ul>',
+    premium_free: '⚪ Gratuito', premium_free_desc: 'Velocímetro e HUD essenciais, com anúncios.',
     premium_monthly: '🟢 Premium Mensal', premium_monthly_desc: 'Ideal para experimentares todas as funcionalidades.',
     premium_yearly: '🔵 Premium Anual', premium_yearly_desc: 'Poupa dinheiro face ao plano mensal.',
     premium_lifetime: '🟠 Premium Vitalício', premium_lifetime_desc: 'Pagamento único. Tudo desbloqueado e todas as futuras funcionalidades Premium incluídas.'
@@ -111,6 +100,7 @@
       var texto = (T[l] || {})[el.dataset.i18n];
       el.innerHTML = texto || el.dataset.en;
     });
+    if (window.renderFeatures) window.renderFeatures(l);
     save('lang', l);
   }
 
