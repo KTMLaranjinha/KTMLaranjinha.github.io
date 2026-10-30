@@ -7,7 +7,7 @@
 <meta name="description" content="TrueGPS Speed: a professional GPS speedometer and HUD for Android, built for drivers who like things their way.">
 <meta property="og:title" content="TrueGPS Speed">
 <meta property="og:description" content="Your speed. Your HUD. Your way.">
-<meta property="og:image" content="assets/logo.png">
+<meta property="og:image" content="https://ktmlaranjinha.github.io/TrueGPS/assets/logo.png">
 <link rel="icon" href="assets/logo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,8 +15,9 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<!-- ============ CABEÇALHO: logótipo, menu, língua, tema ============ -->
 <header class="top">
-  <a class="brand" href="#home"><img src="assets/logo.png" alt="" width="32" height="32" onerror="this.style.display='none'">TrueGPS Speed</a>
+  <a class="brand" href="#home"><img class="logo" src="assets/logo.png" alt="TrueGPS Speed" height="36"></a>
   <nav>
     <a href="#home" data-i18n="nav_home">Home</a>
     <a href="#features" data-i18n="nav_features">Features</a>
@@ -25,6 +26,7 @@
     <a href="#fame" data-i18n="nav_fame">Hall of Fame</a>
     <a href="#changelog" data-i18n="nav_changelog">Changelog</a>
     <a href="#faq" data-i18n="nav_faq">FAQ</a>
+    <a href="#links" data-i18n="nav_links">Links</a>
     <a href="#download" data-i18n="nav_download">Download</a>
   </nav>
   <select id="lang" aria-label="Language"></select>
@@ -32,6 +34,7 @@
 </header>
 
 <main>
+<!-- ============ HOME (hero) ============ -->
 <section id="home" class="hero">
   <div class="hero-text">
     <h1 data-i18n="hero_title">Your speed.<br>Your HUD.<br>Your way.</h1>
@@ -44,6 +47,7 @@
   <div class="hud" aria-hidden="true"><span class="hud-n">126</span><span class="hud-u">km/h</span><i class="hud-bar"></i></div>
 </section>
 
+<!-- ============ FEATURES: um <article class="card"> por funcionalidade ============ -->
 <section id="features">
   <h2 data-i18n="t_features">Features</h2>
   <div class="grid">
@@ -57,17 +61,22 @@
   <p class="note">Replace these cards with the feature text from your Play Store page.</p>
 </section>
 
+<!-- ============ MULTIMÉDIA: screenshots e vídeo ============ -->
 <section id="media">
   <h2 data-i18n="t_media">Screenshots and video</h2>
   <div class="carousel">
     <button class="arrow prev" aria-label="Previous">‹</button>
     <div class="track" id="shots">
-      <figure class="phone"><div class="scr" style="--img:url(assets/shots/01.jpg)"></div><figcaption>Main speedometer</figcaption></figure>
-      <figure class="phone"><div class="scr" style="--img:url(assets/shots/02.jpg)"></div><figcaption>HUD mode</figcaption></figure>
-      <figure class="phone"><div class="scr" style="--img:url(assets/shots/03.jpg)"></div><figcaption>Widgets</figcaption></figure>
-      <figure class="phone"><div class="scr" style="--img:url(assets/shots/04.jpg)"></div><figcaption>Themes</figcaption></figure>
-      <figure class="phone"><div class="scr" style="--img:url(assets/shots/05.jpg)"></div><figcaption>Calibration</figcaption></figure>
-      <figure class="phone"><div class="scr" style="--img:url(assets/shots/06.jpg)"></div><figcaption>Premium</figcaption></figure>
+      <!-- Para acrescentar um screenshot: copia uma linha <figure> e muda o nome da imagem -->
+      <figure class="phone"><img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1"></figure>
+      <figure class="phone"><img src="assets/shots/02.jpg" alt="TrueGPS Speed screenshot 2" loading="lazy"></figure>
+      <figure class="phone"><img src="assets/shots/03.jpg" alt="TrueGPS Speed screenshot 3" loading="lazy"></figure>
+      <figure class="phone"><img src="assets/shots/04.jpg" alt="TrueGPS Speed screenshot 4" loading="lazy"></figure>
+      <figure class="phone"><img src="assets/shots/05.jpg" alt="TrueGPS Speed screenshot 5" loading="lazy"></figure>
+      <figure class="phone"><img src="assets/shots/06.jpg" alt="TrueGPS Speed screenshot 6" loading="lazy"></figure>
+      <figure class="phone"><img src="assets/shots/07.jpg" alt="TrueGPS Speed screenshot 7" loading="lazy"></figure>
+      <figure class="phone"><img src="assets/shots/08.jpg" alt="TrueGPS Speed screenshot 8" loading="lazy"></figure>
+      <figure class="phone"><img src="assets/shots/09.jpg" alt="TrueGPS Speed screenshot 9" loading="lazy"></figure>
     </div>
     <button class="arrow next" aria-label="Next">›</button>
   </div>
@@ -76,6 +85,7 @@
   <div id="video" class="video" data-yt="USXWu43mxAE" role="button" tabindex="0" aria-label="Play video" style="--poster:url(https://i.ytimg.com/vi/USXWu43mxAE/hqdefault.jpg)"><span class="play">▶</span></div>
 </section>
 
+<!-- ============ PREMIUM e preços ============ -->
 <section id="premium">
   <h2 data-i18n="t_premium">Premium</h2>
   <div class="grid two">
@@ -84,6 +94,7 @@
   </div>
 </section>
 
+<!-- ============ HALL OF FAME: trocar exemplos por comentários reais ============ -->
 <section id="fame">
   <h2 data-i18n="t_fame">Hall of Fame</h2>
   <p class="lead" data-i18n="fame_lead">Reviews we would love to earn. These are examples of the experience we aim for, not real user reviews. Real ones will replace them.</p>
@@ -94,6 +105,7 @@
   </div>
 </section>
 
+<!-- ============ CHANGELOG e ROADMAP ============ -->
 <section id="changelog">
   <h2 data-i18n="t_changelog">Changelog and roadmap</h2>
   <div class="grid two">
@@ -113,6 +125,7 @@
   </div>
 </section>
 
+<!-- ============ FAQ (acordeão) e manual rápido ============ -->
 <section id="faq">
   <h2 data-i18n="t_faq">FAQ</h2>
   <details><summary>How accurate is the GPS?</summary><p>Add your answer here.</p></details>
@@ -122,6 +135,45 @@
   <ol class="steps"><li>Press +</li><li>Choose a layout</li><li>Customize it</li><li>Save</li></ol>
 </section>
 
+<!-- ============ LINKS: apoio e produtos recomendados ============ -->
+<section id="links">
+  <h2 data-i18n="t_links">Support and recommended products</h2>
+
+  <h3 class="sub" data-i18n="t_support">Support the project</h3>
+  <div class="grid link-grid">
+    <a class="card" href="https://www.patreon.com/c/KTMLaranjinha" target="_blank" rel="noopener"><h3>Patreon</h3><p>Monthly support</p></a>
+    <a class="card" href="https://www.paypal.me/KTMLaranjinha" target="_blank" rel="noopener"><h3>PayPal</h3><p>One-time donation</p></a>
+    <a class="card" href="https://revolut.me/ktmlaranjinha" target="_blank" rel="noopener"><h3>Revolut</h3><p>One-time donation</p></a>
+  </div>
+
+  <!-- Imagens opcionais: assets/products/spigen.jpg, mounts.jpg, tesla.jpg, shop.jpg, referral.jpg -->
+  <h3 class="sub" data-i18n="t_products">Recommended products (affiliate)</h3>
+  <div class="grid link-grid">
+    <a class="card" href="https://amzn.to/4xQV03S" target="_blank" rel="sponsored noopener">
+      <img src="assets/products/spigen.jpg" alt="" loading="lazy" onerror="this.remove()">
+      <h3>Spigen</h3><p>Cases and accessories I recommend.</p>
+    </a>
+    <a class="card" href="https://amzn.to/4hcnuia" target="_blank" rel="sponsored noopener">
+      <img src="assets/products/mounts.jpg" alt="" loading="lazy" onerror="this.remove()">
+      <h3>Phone mounts</h3><p>Holders for using TrueGPS Speed in the car.</p>
+    </a>
+    <a class="card" href="https://amzn.to/4yFZR8x" target="_blank" rel="sponsored noopener">
+      <img src="assets/products/tesla.jpg" alt="" loading="lazy" onerror="this.remove()">
+      <h3>Tesla accessories</h3><p>Useful accessories for your Tesla.</p>
+    </a>
+    <a class="card" href="https://www.amazon.es/shop/ktmlaranjinha" target="_blank" rel="sponsored noopener">
+      <img src="assets/products/shop.jpg" alt="" loading="lazy" onerror="this.remove()">
+      <h3>My Amazon shop</h3><p>All my recommendations in one place.</p>
+    </a>
+    <a class="card" href="https://www.tesla.com/referral/carlosjorg641976" target="_blank" rel="sponsored noopener">
+      <img src="assets/products/referral.jpg" alt="" loading="lazy" onerror="this.remove()">
+      <h3>Tesla referral</h3><p>Buying a Tesla? Use my referral link.</p>
+    </a>
+  </div>
+  <p class="fine" data-i18n="affil_note">Affiliate links: if you buy through them I earn a small commission at no extra cost to you. As an Amazon Associate I earn from qualifying purchases.</p>
+</section>
+
+<!-- ============ DOWNLOAD ============ -->
 <section id="download" class="dl">
   <h2 data-i18n="t_download">Download</h2>
   <a class="btn primary big" href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed" data-i18n="cta_play">Download on Google Play</a>
@@ -129,16 +181,17 @@
 </section>
 </main>
 
+<!-- ============ RODAPÉ ============ -->
 <footer>
   <div class="links">
     <a href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed">Google Play</a>
-    <a href="https://www.youtube.com/@TrueGPSSpeed">YouTube</a>
+    <a href="https://www.youtube.com/@TrueGPSSpeed">YouTube TrueGPS</a>
+    <a href="https://www.youtube.com/@KTMLaranjinha">YouTube KTMLaranjinha</a>
     <a href="https://github.com/KTMLaranjinha">GitHub</a>
     <a href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/" data-i18n="f_privacy">Privacy</a>
-    <a href="mailto:EMAIL_AQUI" data-i18n="f_contact">Contact</a>
-    <a href="#" data-todo>Patreon</a>
-    <a href="#" data-todo>PayPal</a>
-    <a href="#" data-todo>Amazon</a>
+    <a href="mailto:cjfmatos@gmail.com" data-i18n="f_contact">Contact</a>
+    <a href="#links">Patreon · PayPal · Revolut</a>
+    <a href="https://www.amazon.es/shop/ktmlaranjinha" rel="sponsored noopener">Amazon</a>
   </div>
   <p>© 2026 TrueGPS Speed</p>
 </footer>
