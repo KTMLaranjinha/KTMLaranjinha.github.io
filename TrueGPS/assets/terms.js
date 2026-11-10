@@ -13,9 +13,9 @@
 
 /* ---------- Línguas que aparecem na dropdown ---------- */
 var langs = {
+  "en":"🇬🇧 English",
   "pt":"🇵🇹 Português (Portugal)",
   "br":"🇧🇷 Português (Brasil)",
-  "en":"🇬🇧 English",
   "fr":"🇫🇷 Français",
   "es":"🇪🇸 Español",
   "de":"🇩🇪 Deutsch",

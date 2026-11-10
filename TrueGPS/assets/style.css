@@ -109,6 +109,8 @@ select,#theme {
   cursor:pointer;
 }
 
+#lang{font-size:.9rem}
+
 /* ===== SECÇÕES (espaçamento geral) ===== */
 section {
   max-width:1080px;

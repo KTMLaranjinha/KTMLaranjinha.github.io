@@ -1,4 +1,4 @@
-﻿/* =========================================================
+/* =========================================================
    TrueGPS Speed – comportamento do site
    1) Atalhos   2) Línguas   3) Tema   4) Galeria e carrosseis   5) Vídeo
    ========================================================= */
@@ -17,9 +17,9 @@
      As 13 da página de privacidade. O código (en, br, ...) é o que
      aparece no endereço: .../TrueGPS/#br                              */
   var LANGS = {
+    en: '🇬🇧 English',
     pt: '🇵🇹 Português (Portugal)',
     br: '🇧🇷 Português (Brasil)',
-    en: '🇬🇧 English',
     fr: '🇫🇷 Français',
     es: '🇪🇸 Español',
     de: '🇩🇪 Deutsch',
