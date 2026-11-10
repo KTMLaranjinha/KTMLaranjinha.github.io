@@ -26,15 +26,17 @@
     <a href="#home" data-i18n="nav_home">Home</a>
     <a href="#about" data-i18n="nav_about">TrueGPS: What is it?</a>
     <a href="#action" data-i18n="nav_action">TrueGPS in Action</a>
+    <a href="#playstore" data-i18n="nav_playstore">Play Store Images</a>
     <a href="#huds" data-i18n="nav_huds">HUDs</a>
-    <a href="#features2" data-i18n="nav_features2">Features 2</a>
-    <a href="#features" data-i18n="nav_features">Features</a>
-    <a href="#media" data-i18n="nav_media">Media</a>
-    <a href="#premium" data-i18n="nav_premium">Premium</a>
+    <a href="#features2" data-i18n="nav_features2">Features</a>
+    <a href="#features" data-i18n="nav_features_detail">In Detail</a>
+    
+    <a href="#premium" data-i18n="nav_premium">Subscription and Premium</a>
     <a href="#fame" data-i18n="nav_fame">Hall of Fame</a>
     <a href="#changelog" data-i18n="nav_changelog">Changelog</a>
     <a href="#faq" data-i18n="nav_faq">FAQ</a>
-    <a href="#links" data-i18n="nav_links">Links</a>
+    <a href="#links" data-i18n="nav_support">Support</a>
+    <a href="#products" data-i18n="nav_products">Recommended Products</a>
     <a href="#download" data-i18n="nav_download">Download</a>
   </nav>
   <select id="lang" aria-label="Language"></select>
@@ -48,9 +50,8 @@
     <h1 data-i18n="hero_title">Your speed.<br>Your HUD.<br>Your way.</h1>
     <p data-i18n="hero_sub">A professional GPS speedometer and HUD for Android. Not just another speedometer: full control over how your speed looks.</p>
     <div class="cta">
-      <a class="btn primary" href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed" data-i18n="cta_play">Download on Google Play</a>
-      <img class="app-icon" src="assets/truegpsspeed_logo_1238x1238.jpg" alt="TrueGPS Speed app logo" width="60" height="60">
-      <a class="btn" href="#video" data-i18n="cta_watch">Watch video</a>
+      <a class="btn primary play-cta" href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed"><img class="play-store-badge" src="assets/logo_playstore.jpg" alt="" aria-hidden="true"><span data-i18n="cta_play">Download on Google Play</span><img class="button-app-icon" src="assets/truegpsspeed_logo_1238x1238.jpg" alt="" aria-hidden="true"></a>
+      <a class="btn watch-cta" href="#video"><img class="youtube-badge" src="assets/logo_youtube.jpg" alt="" aria-hidden="true"><span data-i18n="cta_watch">Watch video</span></a>
     </div>
   </div>
   <!-- Logo grande: logo.png (letras brancas) no escuro, logo0.png no claro -->
@@ -66,6 +67,12 @@
 </section>
 <section id="action">
   <h2 data-i18n="t_action">TrueGPS in Action</h2>
+  <h3 class="action-label" data-i18n="t_video_label">Video</h3>
+  <!-- data-yt = ID do vídeo | data-list = ID da playlist (apaga o data-list se não quiseres playlist) -->
+  <div id="video" class="video" data-yt="USXWu43mxAE" data-list="PLcLuVCmpO6rU" role="button" tabindex="0" aria-label="Play video"><img class="video-thumbnail" src="https://i.ytimg.com/vi/USXWu43mxAE/hqdefault.jpg" alt="TrueGPS Speed video thumbnail"><span class="play">▶</span></div>
+  <button id="copy-video-url" class="btn copy-video-btn" type="button" data-i18n="copy_video_url">Copy video link</button><p id="copy-video-status" class="copy-video-status" aria-live="polite"></p>
+  <p class="note playlist-link"><a class="youtube-logo-link" href="https://www.youtube.com/watch?v=USXWu43mxAE&list=PLcLuVCmpO6rU" target="_blank" rel="noopener" aria-label="Open TrueGPS Speed YouTube playlist"><img src="assets/logo_youtube.png" alt="YouTube" width="60" height="60"></a><a href="https://www.youtube.com/watch?v=USXWu43mxAE&list=PLcLuVCmpO6rU" target="_blank" rel="noopener" data-i18n="video_playlist">Watch the full playlist on YouTube</a></p>
+  <h3 class="action-label" data-i18n="t_images_label">Images</h3>
   <div class="gallery" id="gallery-action" data-autoplay="5000" tabindex="0">
     <div class="stage">
       <button class="arrow prev" aria-label="Previous">‹</button>
@@ -115,8 +122,36 @@
 </section>
 
 
+<section id="playstore">
+  <h2 data-i18n="t_playstore">Play Store Images</h2>
+  <div class="gallery" id="gallery" data-autoplay="5000" tabindex="0">
+
+    <!-- Imagem grande (muda ao clicar numa miniatura, nas setas, com swipe ou com as teclas ← →) -->
+    <div class="stage">
+      <button class="arrow prev" aria-label="Previous">‹</button>
+      <img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1">
+      <button class="arrow next" aria-label="Next">›</button>
+    </div>
+
+    <!-- Miniaturas. Para acrescentar um screenshot: copia uma linha <button> e muda o nome da imagem. -->
+    <div class="thumbs">
+      <button class="thumb" aria-label="Screenshot 1"><img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 2"><img src="assets/shots/02.jpg" alt="TrueGPS Speed screenshot 2" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 3"><img src="assets/shots/03.jpg" alt="TrueGPS Speed screenshot 3" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 4"><img src="assets/shots/04.jpg" alt="TrueGPS Speed screenshot 4" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 5"><img src="assets/shots/05.jpg" alt="TrueGPS Speed screenshot 5" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 6"><img src="assets/shots/06.jpg" alt="TrueGPS Speed screenshot 6" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 7"><img src="assets/shots/07.jpg" alt="TrueGPS Speed screenshot 7" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 8"><img src="assets/shots/08.jpg" alt="TrueGPS Speed screenshot 8" loading="lazy"></button>
+      <button class="thumb" aria-label="Screenshot 9"><img src="assets/shots/09.jpg" alt="TrueGPS Speed screenshot 9" loading="lazy"></button>
+    </div>
+
+  </div>
+</section>
+
 <section id="huds">
-  <h2 data-i18n="t_huds">HUDs</h2>
+  <h2 data-i18n="t_huds_display">HUD - Head Up Display</h2>
+  <p class="section-subtitle" data-i18n="t_huds_subtitle">Use your imagination. Build HUDs your way!</p>
   <div class="gallery" id="gallery-huds" data-autoplay="5000" tabindex="0">
     <div class="stage">
       <button class="arrow prev" aria-label="Previous">‹</button>
@@ -169,50 +204,17 @@
 
 
 <section id="features2">
-  <h2 data-i18n="t_features2">Features 2</h2>
+  <h2 data-i18n="t_features2">Features</h2>
   <div id="feature-content-2" class="feature-content"></div>
 </section>
 <!-- ============ FEATURES: um <article class="card"> por funcionalidade ============ -->
 <section id="features">
-  <h2 data-i18n="t_features">Features</h2>
+  <h2 data-i18n="t_features_detail">Features in Detail</h2>
   <div id="feature-content" class="feature-content"></div>
 </section>
 
-<!-- ============ MULTIMÉDIA: screenshots e vídeo ============ -->
-<section id="media">
-  <h2 data-i18n="t_media">Screenshots and video</h2>
-  <div class="gallery" id="gallery" data-autoplay="5000" tabindex="0">
-
-    <!-- Imagem grande (muda ao clicar numa miniatura, nas setas, com swipe ou com as teclas ← →) -->
-    <div class="stage">
-      <button class="arrow prev" aria-label="Previous">‹</button>
-      <img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1">
-      <button class="arrow next" aria-label="Next">›</button>
-    </div>
-
-    <!-- Miniaturas. Para acrescentar um screenshot: copia uma linha <button> e muda o nome da imagem. -->
-    <div class="thumbs">
-      <button class="thumb" aria-label="Screenshot 1"><img src="assets/shots/01.jpg" alt="TrueGPS Speed screenshot 1" loading="lazy"></button>
-      <button class="thumb" aria-label="Screenshot 2"><img src="assets/shots/02.jpg" alt="TrueGPS Speed screenshot 2" loading="lazy"></button>
-      <button class="thumb" aria-label="Screenshot 3"><img src="assets/shots/03.jpg" alt="TrueGPS Speed screenshot 3" loading="lazy"></button>
-      <button class="thumb" aria-label="Screenshot 4"><img src="assets/shots/04.jpg" alt="TrueGPS Speed screenshot 4" loading="lazy"></button>
-      <button class="thumb" aria-label="Screenshot 5"><img src="assets/shots/05.jpg" alt="TrueGPS Speed screenshot 5" loading="lazy"></button>
-      <button class="thumb" aria-label="Screenshot 6"><img src="assets/shots/06.jpg" alt="TrueGPS Speed screenshot 6" loading="lazy"></button>
-      <button class="thumb" aria-label="Screenshot 7"><img src="assets/shots/07.jpg" alt="TrueGPS Speed screenshot 7" loading="lazy"></button>
-      <button class="thumb" aria-label="Screenshot 8"><img src="assets/shots/08.jpg" alt="TrueGPS Speed screenshot 8" loading="lazy"></button>
-      <button class="thumb" aria-label="Screenshot 9"><img src="assets/shots/09.jpg" alt="TrueGPS Speed screenshot 9" loading="lazy"></button>
-    </div>
-
-  </div>
-
-  <!-- data-yt = ID do vídeo | data-list = ID da playlist (apaga o data-list se não quiseres playlist) -->
-  <div id="video" class="video" data-yt="USXWu43mxAE" data-list="PLcLuVCmpO6rU" role="button" tabindex="0" aria-label="Play video"><img class="video-thumbnail" src="https://i.ytimg.com/vi/USXWu43mxAE/hqdefault.jpg" alt="TrueGPS Speed video thumbnail"><span class="play">▶</span></div>
-  <p class="note"><a href="https://www.youtube.com/watch?v=USXWu43mxAE&list=PLcLuVCmpO6rU" target="_blank" rel="noopener" data-i18n="video_playlist">Watch the full playlist on YouTube</a></p>
-</section>
-
-<!-- ============ PREMIUM e preços ============ -->
 <section id="premium">
-  <h2 data-i18n="t_premium">Premium</h2>
+  <h2 data-i18n="t_premium">Subscription and Premium</h2>
   <div class="grid premium-grid">
     <article class="card premium-free"><h3 data-i18n="premium_free">⚪ Free</h3><p class="price">0 €</p><p data-i18n="premium_free_desc">Core speedometer and HUD, with ads.</p></article>
     <article class="card premium-monthly"><h3 data-i18n="premium_monthly">🟢 Premium Monthly</h3><p class="price">0,99 €</p><p data-i18n="premium_monthly_desc">Ideal for trying all features.</p></article>
@@ -220,6 +222,12 @@
     <article class="card premium-lifetime"><h3 data-i18n="premium_lifetime">🟠 Premium Lifetime</h3><p class="price">30,00 €</p><p data-i18n="premium_lifetime_desc">One-time payment. Everything unlocked, including all future Premium features.</p></article>
   </div>
 </section>
+
+
+<!-- ============ MULTIMÉDIA: screenshots e vídeo ============ -->
+
+
+
 
 <!-- ============ HALL OF FAME: exemplos (fase 1), trocar por comentários reais ============ -->
 <section id="fame">
@@ -369,34 +377,42 @@
            1) o texto  2) as estrelas  3) o autor (<h3>)  4) a etiqueta: class="tag real" e o texto Play Store -->
     <blockquote class="card" lang="pt">
       <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-label="5 stars">★★★★★</span>
       <p>“Uso Android Auto todos os dias no meu carro e nunca encontrava um HUD que me agradasse. Instalei a TrueGPS Speed sem grandes expectativas e passados cinco minutos já estava a criar o meu próprio layout. Desde esse dia nunca mais utilizei outra aplicação.”</p>
     </blockquote>
     <blockquote class="card" lang="pt">
       <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-label="5 stars">★★★★★</span>
       <p>“Achei que era apenas mais um velocímetro GPS. Quando descobri que podia calibrar a velocidade para coincidir com o painel do meu carro, percebi que esta aplicação era diferente.”</p>
     </blockquote>
     <blockquote class="card" lang="pt">
       <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-label="5 stars">★★★★★</span>
       <p>“Depois de configurar as cores, o tipo de letra e o HUD exatamente como queria, tornou-se impossível voltar às outras aplicações.”</p>
     </blockquote>
     <blockquote class="card" lang="en">
       <span class="tag" data-i18n="tag_motto">Motto</span>
+      <span class="stars" aria-label="5 stars">★★★★★</span>
       <p>“Built for Power Users. Simple enough for everyone.”</p>
     </blockquote>
     <blockquote class="card" lang="en">
       <span class="tag" data-i18n="tag_motto">Motto</span>
+      <span class="stars" aria-label="5 stars">★★★★★</span>
       <p>“Designed for drivers who like things their way.”</p>
     </blockquote>
     <blockquote class="card" lang="en">
       <span class="tag" data-i18n="tag_motto">Motto</span>
+      <span class="stars" aria-label="5 stars">★★★★★</span>
       <p>“Not just another GPS speedometer.”</p>
     </blockquote>
     <blockquote class="card" lang="en">
       <span class="tag" data-i18n="tag_motto">Motto</span>
+      <span class="stars" aria-label="5 stars">★★★★★</span>
       <p>“Your speed. Your HUD. Your way.”</p>
     </blockquote>
     <blockquote class="card" lang="pt">
       <span class="tag" data-i18n="tag_example">Example</span>
+      <span class="stars" aria-label="5 stars">★★★★★</span>
       <p>“TrueGPS Speed parece-me que surgiu não para competir por ser apenas mais um velocímetro, mas por dar ao utilizador controlo e personalização que as outras apps normalmente não oferecem.”</p>
     </blockquote>
     </div>
@@ -406,7 +422,7 @@
 
 <!-- ============ CHANGELOG e ROADMAP ============ -->
 <section id="changelog">
-  <h2 data-i18n="t_changelog">Changelog and roadmap</h2>
+  <h2 data-i18n="t_changelog">Changelog and Roadmap</h2>
   <div class="grid two">
     <article class="card">
       <h3>Version 1.0</h3>
@@ -436,17 +452,20 @@
 
 <!-- ============ LINKS: apoio e produtos recomendados ============ -->
 <section id="links">
-  <h2 data-i18n="t_links">Support and recommended products</h2>
-
-  <h3 class="sub" data-i18n="t_support">Support the project</h3>
+  <h2 data-i18n="t_support">Support</h2>
   <div class="grid link-grid">
-    <a class="card" href="https://www.patreon.com/c/KTMLaranjinha" target="_blank" rel="noopener"><h3>Patreon</h3><p>Monthly support</p></a>
-    <a class="card" href="https://www.paypal.me/KTMLaranjinha" target="_blank" rel="noopener"><h3>PayPal</h3><p>One-time donation</p></a>
-    <a class="card" href="https://revolut.me/ktmlaranjinha" target="_blank" rel="noopener"><h3>Revolut</h3><p>One-time donation</p></a>
-  </div>
+    <a class="card support-card" href="https://www.patreon.com/c/KTMLaranjinha" target="_blank" rel="noopener"><img class="support-logo" src="assets/patreon_logo.png" alt="" loading="lazy" onerror="this.remove()"><h3>Patreon</h3><p>Monthly support</p></a>
+    <a class="card support-card" href="https://www.paypal.me/KTMLaranjinha" target="_blank" rel="noopener"><img class="support-logo" src="assets/paypal_logo.png" alt="" loading="lazy" onerror="this.remove()"><h3>PayPal</h3><p>One-time donation</p></a>
+    <a class="card support-card" href="https://revolut.me/ktmlaranjinha" target="_blank" rel="noopener"><img class="support-logo" src="assets/revolut_logo.png" alt="" loading="lazy" onerror="this.remove()"><h3>Revolut</h3><p>One-time donation</p></a>
 
-  <!-- Imagens opcionais: assets/products/spigen.jpg, mounts.jpg, tesla.jpg, shop.jpg, referral.jpg -->
-  <h3 class="sub" data-i18n="t_products">Recommended products (affiliate)</h3>
+    <a class="card" href="https://www.tesla.com/referral/carlosjorg641976" target="_blank" rel="sponsored noopener">
+      <img src="assets/products/referral.jpg" alt="" loading="lazy" onerror="this.remove()">
+      <h3>Tesla referral</h3><p>Buying a Tesla? Use my referral link.</p>
+    </a>
+    </div></section>
+
+<section id="products">
+  <h2 data-i18n="t_products">Recommended Products</h2>
   <div class="grid link-grid">
     <a class="card" href="https://amzn.to/4xQV03S" target="_blank" rel="sponsored noopener">
       <img src="assets/products/spigen.jpg" alt="" loading="lazy" onerror="this.remove()">
@@ -464,19 +483,17 @@
       <img src="assets/products/shop.jpg" alt="" loading="lazy" onerror="this.remove()">
       <h3>My Amazon shop</h3><p>All my recommendations in one place.</p>
     </a>
-    <a class="card" href="https://www.tesla.com/referral/carlosjorg641976" target="_blank" rel="sponsored noopener">
-      <img src="assets/products/referral.jpg" alt="" loading="lazy" onerror="this.remove()">
-      <h3>Tesla referral</h3><p>Buying a Tesla? Use my referral link.</p>
-    </a>
   </div>
   <p class="fine" data-i18n="affil_note">Affiliate links: if you buy through them I earn a small commission at no extra cost to you. As an Amazon Associate I earn from qualifying purchases.</p>
 </section>
 
 <!-- ============ DOWNLOAD ============ -->
 <section id="download" class="dl">
+  <img class="download-logo logo-dark" src="assets/logo.png" alt="TrueGPS Speed"><img class="download-logo logo-light" src="assets/logo0.png" alt="TrueGPS Speed">
   <h2 data-i18n="t_download">Download</h2>
-  <a class="btn primary big" href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed" data-i18n="cta_play">Download on Google Play</a>
-  <p class="note">Later: wallpapers, logos, QR code, PDFs.</p>
+  <div class="download-cta">
+    <a class="btn primary big play-cta" href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed"><img class="play-store-badge" src="assets/logo_playstore.jpg" alt="" aria-hidden="true"><span data-i18n="cta_play">Download on Google Play</span><img class="button-app-icon" src="assets/truegpsspeed_logo_1238x1238.jpg" alt="" aria-hidden="true"></a>
+  </div>
 </section>
 </main>
 
@@ -487,14 +504,20 @@
     <a href="https://www.youtube.com/@TrueGPSSpeed">YouTube TrueGPS</a>
     <a href="https://www.youtube.com/@KTMLaranjinha">YouTube KTMLaranjinha</a>
     <a href="https://github.com/KTMLaranjinha">GitHub</a>
-    <a href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/" data-i18n="f_privacy">Privacy</a>
-    <a href="mailto:cjfmatos@gmail.com" data-i18n="f_contact">Contact</a>
-    <a href="#links">Patreon · PayPal · Revolut</a>
+    <a href="mailto:cjfmatos@gmail.com" data-i18n="f_contact">Entrar em contacto</a>
+    <a href="#links">Patreon - Paypal - Revolut - Tesla</a>
     <a href="https://www.amazon.es/shop/ktmlaranjinha" rel="sponsored noopener">Amazon</a>
+    <a href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/" data-i18n="f_privacy" onclick='this.href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/?lang="+encodeURIComponent(document.getElementById("lang").value)+"&amp;theme="+encodeURIComponent(document.documentElement.dataset.theme||"dark")'>Privacy Policy</a>
+    <a href="terms_of_service.html" data-i18n="nav_terms" onclick='this.href="terms_of_service.html?lang="+encodeURIComponent(document.getElementById("lang").value)+"&amp;theme="+encodeURIComponent(document.documentElement.dataset.theme||"dark")'>Terms of Service</a>
   </div>
-  <p>© 2026 TrueGPS Speed</p>
+  <p>© <span id="current-year">2026</span> TrueGPS Speed <span class="copyright-by">by <span>Laranjinha Software</span></span></p>
 </footer>
 <script src="assets/features.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>
+
+
+
+
+

@@ -636,3 +636,53 @@ footer {
 .feature-subtitle { margin:0 0 8px; color:var(--pri); font-size:clamp(1.15rem,2.6vw,1.5rem); font-weight:700; line-height:1.45; }
 .about-copy { margin:0; color:var(--tx2); line-height:1.75; font-size:1.03rem; }
 .feature-ending { margin:0; color:var(--tx); line-height:1.6; font-weight:600; }.about-label { margin:0; color:var(--acc); font-family:"Chakra Petch",sans-serif; font-size:1.15rem; font-weight:700; }
+
+/* Gallery finish and support logos */
+.stage { border-radius:10px; }
+.stage img { transform:none; }
+.thumb { border-radius:6px; }
+.stage .arrow { width:22px; height:22px; margin-top:-11px; padding:0; display:grid; place-items:center; font-size:1rem; line-height:1; }
+.app-icon-link { display:inline-flex; align-items:center; justify-content:center; border-radius:12px; line-height:0; }
+.app-icon-link .app-icon { display:block; width:60px; height:60px; object-fit:cover; border-radius:12px; }
+.download-logo { display:block; width:min(260px,70vw); max-height:120px; object-fit:contain; margin:0 auto 28px; }
+.download-cta { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
+.support-card { text-align:center; }
+.support-logo { display:block; width:48px; height:48px; object-fit:contain; margin:0 auto 8px; }
+
+/* Mostra a imagem da galeria inteira, preservando a proporção. */
+.stage { --stage-image-fit:contain; }
+.stage img { object-fit:var(--stage-image-fit); transform:none; }
+
+/* Consistent section rhythm, compact carousel arrows and Play Store button mark */
+section { padding:64px 20px; }
+.dl { text-align:center; }
+.carousel .arrow { width:24px; height:24px; font-size:1rem; }
+.carousel .arrow.prev { left:-8px; }
+.carousel .arrow.next { right:-8px; }
+.action-label { margin:28px 0 14px; font-size:1.35rem; }
+.section-subtitle { margin:-16px 0 28px; color:var(--tx2); font-size:.95rem; }
+.playlist-link { display:flex; align-items:center; gap:12px; margin:14px 0 24px; }
+.youtube-logo-link { display:inline-flex; flex:0 0 60px; width:60px; height:60px; }
+.youtube-logo-link img { width:60px; height:60px; object-fit:contain; }
+.btn .play-store-badge { width:26px; height:26px; margin-right:10px; object-fit:contain; vertical-align:middle; }
+.btn:has(.play-store-badge) { display:inline-flex; align-items:center; justify-content:center; }
+@media (max-width:760px) { section { padding:48px 20px; } }
+section > h2 { text-align:left; }
+
+.dl > h2 { text-align:center; }
+
+.play-cta { gap:10px; }
+.btn .play-store-badge { margin-right:0; }
+.button-app-icon { width:30px; height:30px; object-fit:cover; border-radius:7px; }
+.youtube-badge { width:26px; height:26px; object-fit:contain; }
+.watch-cta { display:inline-flex; align-items:center; gap:10px; }
+.copyright-by { font-size:.78em; }
+.copyright-by span { color:#ff6a00; }
+
+.download-logo.logo-dark { display:block; }
+.download-logo.logo-light { display:none; }
+[data-theme=light] .download-logo.logo-dark { display:none; }
+[data-theme=light] .download-logo.logo-light { display:block; }
+
+.copy-video-btn { margin:0 0 4px; }
+.copy-video-status { min-height:1.2em; margin:0 0 8px; color:var(--tx2); font-size:.9rem; }
