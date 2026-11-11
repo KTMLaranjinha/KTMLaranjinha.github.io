@@ -725,3 +725,13 @@ h1[data-icon]::before, h2[data-icon]::before { margin-right:.42em; }
 .viewer-prev{grid-column:1}.viewer-next{grid-column:3}
 .viewer-close:hover,.viewer-arrow:hover{background:#303640}
 .steps ol{padding-left:24px;margin:6px 0}.steps>ol{padding-left:22px}.steps li{margin:6px 0}
+
+/* Keep every footer link fully visible on narrow phones. */
+@media (max-width: 860px) {
+  .links { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px 12px; }
+  .links a { min-width: 0; justify-content: center; text-align: center; overflow-wrap: anywhere; }
+}
+@media (max-width: 520px) {
+  .links { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px 8px; }
+  .links a { font-size: .88rem; }
+}
