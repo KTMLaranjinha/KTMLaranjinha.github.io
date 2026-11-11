@@ -371,12 +371,25 @@ function getParam(name) {
 
 
 /* Desenha a página na língua escolhida */
+var footerLabels = {
+  en: ["Support", "Recommended Products", "Contact"], pt: ["Apoio", "Produtos Recomendados", "Entrar em contacto"], br: ["Apoio", "Produtos Recomendados", "Fale conosco"],
+  fr: ["Soutien", "Produits recommandés", "Nous contacter"], es: ["Apoyo", "Productos recomendados", "Contacto"], de: ["Unterstützung", "Empfohlene Produkte", "Kontakt"],
+  it: ["Supporto", "Prodotti consigliati", "Contattaci"], ru: ["Поддержка", "Рекомендуемые товары", "Связаться"], tr: ["Destek", "Önerilen Ürünler", "İletişim"],
+  id: ["Dukungan", "Produk Rekomendasi", "Hubungi kami"], hi: ["सहायता", "सुझाए गए उत्पाद", "संपर्क करें"], ja: ["応援", "おすすめ商品", "お問い合わせ"], ko: ["후원", "추천 제품", "문의하기"]
+};
 function render(lang) {
   var t = copy[lang] || copy.en;                    // sem tradução → inglês
 
   document.documentElement.lang = (lang === 'br') ? 'pt-BR' : lang;
   document.title = 'TrueGPS Speed — ' + t[0];
   sel.value = lang;
+  var footer = footerLabels[lang] || footerLabels.en;
+  var supportLink = document.getElementById('footer-support');
+  var productsLink = document.getElementById('footer-products');
+  var contactLink = document.getElementById('footer-contact');
+  if (supportLink) supportLink.textContent = footer[0];
+  if (productsLink) productsLink.textContent = footer[1];
+  if (contactLink) contactLink.textContent = footer[2];
 
   var sections = '';
   for (var i = 0; i < t[2].length; i++) {
