@@ -654,7 +654,8 @@ footer {
 .stage .arrow { width:22px; height:22px; margin-top:-11px; padding:0; display:grid; place-items:center; font-size:1rem; line-height:1; }
 .app-icon-link { display:inline-flex; align-items:center; justify-content:center; border-radius:12px; line-height:0; }
 .app-icon-link .app-icon { display:block; width:60px; height:60px; object-fit:cover; border-radius:12px; }
-.download-logo { display:block; width:min(260px,70vw); max-height:120px; object-fit:contain; margin:0 auto 28px; }
+.download-logo { display:block; width:min(390px,85vw); max-height:180px; object-fit:contain; margin:0 auto 10px; }
+.download-slogan { margin:0 auto 22px; color:var(--pri); font-size:clamp(1rem,2.3vw,1.25rem); font-weight:700; line-height:1.5; }
 .download-cta { display:flex; align-items:center; justify-content:center; gap:14px; flex-wrap:wrap; }
 .support-card { text-align:center; }
 .support-logo { display:block; width:48px; height:48px; object-fit:contain; margin:0 auto 8px; }

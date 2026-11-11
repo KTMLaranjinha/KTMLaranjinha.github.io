@@ -48,7 +48,7 @@
     t_fame: 'Hall of Fame',
     fame_lead: 'Comentários que gostaríamos de merecer. São exemplos da experiência que queremos proporcionar, não opiniões reais de utilizadores. Os reais vão substituí-los.',
     t_changelog: 'Novidades e Roadmap', t_faq: 'FAQ',
-    t_links: 'Apoio e produtos recomendados', t_support: 'Apoio ao Projeto',
+    t_links: 'Apoio e produtos recomendados', t_support: 'Apoia o Projeto — Paga-me um café',
     t_products: 'Produtos Recomendados (Afiliados)',
     affil_note: 'Links de afiliado: se comprares através deles, ganho uma pequena comissão, sem custo extra para ti. Como Associado da Amazon, obtenho receitas de compras elegíveis.',
     tag_example: 'Exemplo', tag_motto: 'Lema',
@@ -69,7 +69,7 @@
     hero_sub: 'Um velocímetro GPS profissional e HUD para Android. Não é só mais um velocímetro: você tem controle total sobre a aparência da sua velocidade.',
     cta_play: 'Baixar no Google Play',
     fame_lead: 'Comentários que gostaríamos de merecer. São exemplos da experiência que queremos oferecer, não avaliações reais de usuários. As reais vão substituí-los.',
-    t_support: 'Apoio ao Projeto',
+    t_support: 'Apoie o projeto — Pague-me um café',
     affil_note: 'Links de afiliado: se você comprar por eles, ganho uma pequena comissão, sem custo extra. Como Associado da Amazon, obtenho receitas de compras elegíveis.',
     f_contact: 'Entrar em contacto'
   });
@@ -89,6 +89,22 @@
     ja:{nav_terms:'利用規約',nav_support:'サポート',nav_products:'おすすめ商品',nav_premium:'サブスクリプション',f_privacy:'プライバシーポリシー',t_video_label:'動画',t_images_label:'画像',t_huds_display:'HUD（ヘッドアップディスプレイ）',t_huds_subtitle:'想像力を活かして、自分好みのHUDを作りましょう。'},
     ko:{nav_terms:'서비스 약관',nav_support:'후원',nav_products:'추천 제품',nav_premium:'구독',f_privacy:'개인정보 처리방침',t_video_label:'동영상',t_images_label:'이미지',t_huds_display:'HUD(헤드업 디스플레이)',t_huds_subtitle:'상상력을 발휘해 원하는 HUD를 만들어 보세요!'}
   };
+  var SITE_COPY_T = {
+    en: { download_slogan: "Designed for drivers who like things their way.", t_products: "Recommended Products (Affiliates)", t_support: "Support the Project — Buy Me a Coffee" },
+    pt: { download_slogan: "Pensado para condutores que gostam das coisas à sua maneira.", t_products: "Produtos Recomendados (Afiliados)", t_support: "Apoia o Projeto — Paga-me um café" },
+    br: { download_slogan: "Feito para motoristas que gostam das coisas do seu jeito.", t_products: "Produtos Recomendados (Afiliados)", t_support: "Apoie o projeto — Pague-me um café" },
+    fr: { download_slogan: "Conçu pour les conducteurs qui aiment faire les choses à leur façon.", t_products: "Produits recommandés (liens affiliés)", t_support: "Soutenez le projet — Offrez-moi un café" },
+    es: { download_slogan: "Diseñado para conductores a quienes les gusta hacer las cosas a su manera.", t_products: "Productos recomendados (afiliados)", t_support: "Apoya el proyecto — Invítame a un café" },
+    de: { download_slogan: "Für Fahrer entwickelt, die die Dinge gern auf ihre eigene Art machen.", t_products: "Produktempfehlungen (Affiliate-Links)", t_support: "Unterstütze das Projekt — Spendiere mir einen Kaffee" },
+    it: { download_slogan: "Pensato per chi guida e ama fare le cose a modo proprio.", t_products: "Prodotti consigliati (link affiliati)", t_support: "Sostieni il progetto — Offrimi un caffè" },
+    ru: { download_slogan: "Создано для водителей, которые любят делать всё по-своему.", t_products: "Рекомендуемые товары (партнёрские ссылки)", t_support: "Поддержите проект — угостите меня кофе" },
+    tr: { download_slogan: "Her şeyi kendi tarzında yapmayı seven sürücüler için tasarlandı.", t_products: "Önerilen Ürünler (Satış Ortaklığı)", t_support: "Projeyi destekleyin — Bana bir kahve ısmarlayın" },
+    id: { download_slogan: "Dirancang untuk pengemudi yang suka melakukan semuanya dengan cara mereka sendiri.", t_products: "Produk Rekomendasi (Afiliasi)", t_support: "Dukung proyek ini — Traktir saya secangkir kopi" },
+    hi: { download_slogan: "उन चालकों के लिए बनाया गया जिन्हें अपने तरीके से काम करना पसंद है।", t_products: "सुझाए गए उत्पाद (एफ़िलिएट लिंक)", t_support: "प्रोजेक्ट का समर्थन करें — मुझे एक कॉफ़ी पिलाएँ" },
+    ja: { download_slogan: "自分らしいスタイルを大切にするドライバーのために。", t_products: "おすすめ商品（アフィリエイト）", t_support: "プロジェクトを応援 — コーヒーをごちそうしてください" },
+    ko: { download_slogan: "자신만의 방식으로 운전하는 것을 좋아하는 분들을 위해 만들었습니다.", t_products: "추천 제품 (제휴 링크)", t_support: "프로젝트 후원 — 커피 한 잔 사 주세요" }
+  };
+  Object.keys(SITE_COPY_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},EXTRA_T[code]||{},SITE_COPY_T[code]); });
   var REQUESTED_T = {
  en:{
   t_fame_desired:"Hall of Fame we hope for!",fame2_lead_updated:"Your Play Store review could be featured here soon.",fame2_placeholder:"Your review can be here!<br>Updated soon.",roadmap_title:"Roadmap",
