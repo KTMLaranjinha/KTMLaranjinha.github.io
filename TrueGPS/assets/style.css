@@ -696,3 +696,13 @@ section > h2 { text-align:left; }
 
 .copy-video-btn { margin:0 0 4px; }
 .copy-video-status { min-height:1.2em; margin:0 0 8px; color:var(--tx2); font-size:.9rem; }
+
+/* Icons for navigation, section headings, and the footer */
+nav a[data-icon], footer .links a[data-icon] { display:inline-flex; align-items:center; gap:.38em; }
+nav a[data-icon]::before, footer .links a[data-icon]::before,
+h1[data-icon]::before, h2[data-icon]::before {
+  content:attr(data-icon);
+  display:inline-block;
+  line-height:1;
+}
+h1[data-icon]::before, h2[data-icon]::before { margin-right:.42em; }
