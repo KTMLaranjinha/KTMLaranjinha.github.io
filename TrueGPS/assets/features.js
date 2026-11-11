@@ -324,25 +324,136 @@ FEATURES.en = {
 /* Conteúdo das novas secções. Acrescenta aqui os outros idiomas; sem tradução usa EN. */
 window.ABOUT = {
   pt: {
-        label: "🎯 O que é o TrueGPS?",
-subtitle: "Velocímetro GPS e HUD com widgets, alertas, efeitos visuais e perfis de veículos",
+    label: "🎯 O que é o TrueGPS?",
+    subtitle: "Velocímetro GPS e HUD com widgets, alertas, efeitos visuais e perfis de veículos com custos",
     paragraphs: [
       "O TrueGPS é um poderoso Velocímetro GPS e HUD (Head-Up Display), desenvolvido para condutores que pretendem ter controlo total sobre a sua experiência de condução, em vez de soluções fechadas e limitadas.",
       "Personalize todos os detalhes, crie HUDs ilimitados, calibre a velocidade GPS para cada veículo através de perfis dedicados e desfrute de widgets, efeitos e alertas avançados.",
-      "Ao contrário das aplicações GPS tradicionais, o TrueGPS permite-lhe controlar totalmente a forma como a velocidade, as viagens, os alertas e os dados do veículo são apresentados."
-    ]
+      "Ao contrário das aplicações GPS tradicionais, o TrueGPS permite-lhe controlar totalmente a forma como a velocidade, as viagens, os alertas, os dados do veículo e os custos são apresentados."
+    ],
+    ending: ["Feito para utilizadores avançados. Simples para todos."]
+  },
+  br: {
+    label: "🎯 O que é o TrueGPS?",
+    subtitle: "Velocímetro GPS e HUD com widgets, alertas, efeitos visuais e perfis de veículos com custos",
+    paragraphs: [
+      "O TrueGPS é um poderoso velocímetro GPS e HUD (Head-Up Display), desenvolvido para motoristas que querem ter controle total sobre a experiência ao dirigir, em vez de soluções fechadas e limitadas.",
+      "Personalize cada detalhe, crie HUDs ilimitados, calibre a velocidade GPS para cada veículo com perfis dedicados e aproveite widgets, efeitos e alertas avançados.",
+      "Ao contrário dos aplicativos GPS tradicionais, o TrueGPS permite controlar totalmente como a velocidade, as viagens, os alertas, os dados do veículo e os custos são apresentados."
+    ],
+    ending: ["Feito para usuários avançados. Simples para todos."]
   },
   en: {
-        label: "🎯 What is TrueGPS?",
-subtitle: "GPS speedometer and HUD with widgets, alerts, visual effects and vehicle profiles",
+    label: "🎯 What is TrueGPS?",
+    subtitle: "GPS speedometer and HUD with widgets, alerts, visual effects, and vehicle profiles with costs",
     paragraphs: [
       "TrueGPS is a powerful GPS speedometer and HUD (Head-Up Display), built for drivers who want full control over their driving experience instead of closed, limited solutions.",
-      "Customize every detail, create unlimited HUDs, calibrate GPS speed for each vehicle with dedicated profiles, and use advanced widgets, effects and alerts.",
-      "Unlike traditional GPS apps, TrueGPS lets you control exactly how speed, trips, alerts and vehicle data are displayed."
-    ]
+      "Customize every detail, create unlimited HUDs, calibrate GPS speed for each vehicle with dedicated profiles, and enjoy advanced widgets, effects, and alerts.",
+      "Unlike traditional GPS apps, TrueGPS gives you full control over how speed, trips, alerts, vehicle data, and costs are displayed."
+    ],
+    ending: ["Built for power users. Simple enough for everyone."]
+  },
+  fr: {
+    label: "🎯 Qu’est-ce que TrueGPS ?",
+    subtitle: "Compteur de vitesse GPS et HUD avec widgets, alertes, effets visuels et profils de véhicules avec coûts",
+    paragraphs: [
+      "TrueGPS est un puissant compteur de vitesse GPS et HUD (affichage tête haute), conçu pour les conducteurs qui veulent garder le contrôle total de leur expérience de conduite, plutôt que d’utiliser des solutions fermées et limitées.",
+      "Personnalisez chaque détail, créez des HUD illimités, calibrez la vitesse GPS pour chaque véhicule grâce à des profils dédiés et profitez de widgets, d’effets et d’alertes avancés.",
+      "Contrairement aux applications GPS traditionnelles, TrueGPS vous permet de contrôler entièrement l’affichage de la vitesse, des trajets, des alertes, des données du véhicule et des coûts."
+    ],
+    ending: ["Conçu pour les utilisateurs exigeants. Simple pour tous."]
+  },
+  es: {
+    label: "🎯 ¿Qué es TrueGPS?",
+    subtitle: "Velocímetro GPS y HUD con widgets, alertas, efectos visuales y perfiles de vehículos con costes",
+    paragraphs: [
+      "TrueGPS es un potente velocímetro GPS y HUD (Head-Up Display), creado para conductores que quieren controlar por completo su experiencia al volante, en lugar de usar soluciones cerradas y limitadas.",
+      "Personaliza cada detalle, crea HUD ilimitados, calibra la velocidad GPS de cada vehículo con perfiles específicos y disfruta de widgets, efectos y alertas avanzados.",
+      "A diferencia de las aplicaciones GPS tradicionales, TrueGPS te permite controlar totalmente cómo se muestran la velocidad, los viajes, las alertas, los datos del vehículo y los costes."
+    ],
+    ending: ["Creado para usuarios avanzados. Sencillo para todos."]
+  },
+  de: {
+    label: "🎯 Was ist TrueGPS?",
+    subtitle: "GPS-Tacho und HUD mit Widgets, Warnungen, visuellen Effekten und Fahrzeugprofilen mit Kosten",
+    paragraphs: [
+      "TrueGPS ist ein leistungsstarker GPS-Tacho und ein HUD (Head-up-Display) für Fahrer, die ihr Fahrerlebnis vollständig selbst bestimmen möchten, statt auf geschlossene und eingeschränkte Lösungen angewiesen zu sein.",
+      "Passe jedes Detail an, erstelle unbegrenzt viele HUDs, kalibriere die GPS-Geschwindigkeit für jedes Fahrzeug mit eigenen Profilen und nutze erweiterte Widgets, Effekte und Warnungen.",
+      "Anders als herkömmliche GPS-Apps lässt dich TrueGPS vollständig bestimmen, wie Geschwindigkeit, Fahrten, Warnungen, Fahrzeugdaten und Kosten angezeigt werden."
+    ],
+    ending: ["Für anspruchsvolle Nutzer entwickelt. Einfach für alle."]
+  },
+  it: {
+    label: "🎯 Che cos’è TrueGPS?",
+    subtitle: "Tachimetro GPS e HUD con widget, avvisi, effetti visivi e profili veicolo con costi",
+    paragraphs: [
+      "TrueGPS è un potente tachimetro GPS e HUD (Head-Up Display), sviluppato per chi vuole avere il pieno controllo della propria esperienza di guida, invece di usare soluzioni chiuse e limitate.",
+      "Personalizza ogni dettaglio, crea HUD illimitati, calibra la velocità GPS per ogni veicolo con profili dedicati e sfrutta widget, effetti e avvisi avanzati.",
+      "A differenza delle tradizionali app GPS, TrueGPS ti permette di controllare completamente come vengono visualizzati velocità, viaggi, avvisi, dati del veicolo e costi."
+    ],
+    ending: ["Creato per gli utenti più esigenti. Semplice per tutti."]
+  },
+  ru: {
+    label: "🎯 Что такое TrueGPS?",
+    subtitle: "GPS-спидометр и HUD с виджетами, предупреждениями, визуальными эффектами и профилями транспорта с расходами",
+    paragraphs: [
+      "TrueGPS — это мощный GPS-спидометр и HUD (проекционный дисплей) для водителей, которые хотят полностью управлять своим опытом вождения, а не пользоваться закрытыми и ограниченными решениями.",
+      "Настраивайте каждую деталь, создавайте неограниченное количество HUD, калибруйте GPS-скорость для каждого транспорта с помощью отдельных профилей и используйте расширенные виджеты, эффекты и предупреждения.",
+      "В отличие от обычных GPS-приложений, TrueGPS позволяет полностью управлять отображением скорости, поездок, предупреждений, данных транспорта и расходов."
+    ],
+    ending: ["Для опытных пользователей. Просто для каждого."]
+  },
+  tr: {
+    label: "🎯 TrueGPS nedir?",
+    subtitle: "Widget’lar, uyarılar, görsel efektler ve maliyet içeren araç profilleriyle GPS hız göstergesi ve HUD",
+    paragraphs: [
+      "TrueGPS, kapalı ve kısıtlı çözümler yerine sürüş deneyimi üzerinde tam kontrol isteyen sürücüler için geliştirilmiş güçlü bir GPS hız göstergesi ve HUD (Head-Up Display) uygulamasıdır.",
+      "Her ayrıntıyı kişiselleştirin, sınırsız HUD oluşturun, özel profillerle her araç için GPS hızını kalibre edin; gelişmiş widget’ların, efektlerin ve uyarıların keyfini çıkarın.",
+      "Geleneksel GPS uygulamalarının aksine TrueGPS; hızın, yolculukların, uyarıların, araç verilerinin ve maliyetlerin nasıl gösterileceğini tamamen kontrol etmenizi sağlar."
+    ],
+    ending: ["İleri düzey kullanıcılar için tasarlandı. Herkes için kolay."]
+  },
+  id: {
+    label: "🎯 Apa itu TrueGPS?",
+    subtitle: "Speedometer GPS dan HUD dengan widget, peringatan, efek visual, serta profil kendaraan dan biaya",
+    paragraphs: [
+      "TrueGPS adalah speedometer GPS dan HUD (Head-Up Display) yang canggih, dibuat untuk pengemudi yang ingin mengendalikan pengalaman berkendara sepenuhnya, bukan memakai solusi tertutup dan terbatas.",
+      "Sesuaikan setiap detail, buat HUD tanpa batas, kalibrasikan kecepatan GPS untuk setiap kendaraan melalui profil khusus, dan nikmati widget, efek, serta peringatan tingkat lanjut.",
+      "Berbeda dari aplikasi GPS biasa, TrueGPS memberi Anda kendali penuh atas tampilan kecepatan, perjalanan, peringatan, data kendaraan, dan biaya."
+    ],
+    ending: ["Dirancang untuk pengguna tingkat lanjut. Mudah untuk semua orang."]
+  },
+  hi: {
+    label: "🎯 TrueGPS क्या है?",
+    subtitle: "विजेट, अलर्ट, दृश्य प्रभाव और खर्च सहित वाहन प्रोफ़ाइल वाला GPS स्पीडोमीटर और HUD",
+    paragraphs: [
+      "TrueGPS एक शक्तिशाली GPS स्पीडोमीटर और HUD (Head-Up Display) है, जिसे उन चालकों के लिए बनाया गया है जो सीमित और बंद समाधानों के बजाय अपने ड्राइविंग अनुभव पर पूरा नियंत्रण चाहते हैं।",
+      "हर विवरण को अनुकूलित करें, असीमित HUD बनाएँ, अलग-अलग वाहन प्रोफ़ाइल से GPS गति कैलिब्रेट करें और उन्नत विजेट, प्रभाव तथा अलर्ट का उपयोग करें।",
+      "पारंपरिक GPS ऐप्स से अलग, TrueGPS आपको गति, यात्राओं, अलर्ट, वाहन डेटा और खर्चों के प्रदर्शन पर पूरा नियंत्रण देता है।"
+    ],
+    ending: ["अनुभवी उपयोगकर्ताओं के लिए बनाया गया। सभी के लिए आसान।"]
+  },
+  ja: {
+    label: "🎯 TrueGPSとは？",
+    subtitle: "ウィジェット、警告、視覚効果、車両別の費用プロフィールを備えたGPS速度計とHUD",
+    paragraphs: [
+      "TrueGPSは、制限の多い固定的なアプリではなく、運転体験を自分で自在に管理したいドライバーのために開発された、高機能なGPS速度計とHUD（ヘッドアップディスプレイ）です。",
+      "細部までカスタマイズし、HUDを無制限に作成できます。車両ごとの専用プロフィールでGPS速度を調整し、高度なウィジェット、視覚効果、警告を活用できます。",
+      "従来のGPSアプリとは異なり、速度、走行、警告、車両データ、費用の表示方法を自由に管理できます。"
+    ],
+    ending: ["上級ユーザーのために。誰にでも使いやすく。"]
+  },
+  ko: {
+    label: "🎯 TrueGPS란 무엇인가요?",
+    subtitle: "위젯, 알림, 시각 효과와 비용이 포함된 차량 프로필을 갖춘 GPS 속도계 및 HUD",
+    paragraphs: [
+      "TrueGPS는 제한적이고 닫힌 방식의 솔루션 대신 운전 경험을 완전히 제어하고 싶은 운전자를 위해 개발된 강력한 GPS 속도계 및 HUD(헤드업 디스플레이)입니다.",
+      "세부 항목을 모두 설정하고 HUD를 무제한으로 만들 수 있습니다. 차량별 프로필로 GPS 속도를 보정하고 고급 위젯, 효과, 알림을 활용하세요.",
+      "기존 GPS 앱과 달리 속도, 주행, 알림, 차량 데이터와 비용이 표시되는 방식을 직접 완전히 제어할 수 있습니다."
+    ],
+    ending: ["고급 사용자를 위해 만들었습니다. 누구나 쉽게 사용할 수 있습니다."]
   }
 };
-
 window.FEATURES2 = {
   pt: {
     groups: [
@@ -527,10 +638,10 @@ window.renderFeatures = function (lang) {
       addText(section, 'p', group.note, 'note');
       root.appendChild(section);
     });
-    (data.ending || []).forEach(function (text) { addText(root, 'p', text, 'feature-ending'); });
+    (data.ending || []).forEach(function (text) { addText(root, 'p', text, rootId === 'about-content' ? 'feature-ending about-ending' : 'feature-ending'); });
   }
 
   renderGroups('feature-content', window.FEATURES[code] || window.FEATURES.en || window.FEATURES.pt);
-  renderGroups('about-content', window.ABOUT[code] || window.ABOUT.en || window.ABOUT.pt);
+  renderGroups('about-content', window.ABOUT[lang] || window.ABOUT[code] || window.ABOUT.en || window.ABOUT.pt);
   renderGroups('feature-content-2', window.FEATURES2[code] || window.FEATURES2.en || window.FEATURES2.pt);
 };
