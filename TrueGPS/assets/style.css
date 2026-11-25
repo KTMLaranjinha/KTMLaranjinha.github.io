@@ -773,17 +773,18 @@ h1[data-icon]::before, h2[data-icon]::before { margin-right:.42em; }
 @media(max-width:760px){.carousel{padding:0 28px}.carousel .arrow{display:grid;width:30px;height:30px}.carousel .arrow.prev{left:0}.carousel .arrow.next{right:0}}
 @media(max-width:420px){.carousel{padding:0 24px}.carousel .arrow{width:26px;height:26px}}
 
-.image-viewer{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.94);display:grid;grid-template-columns:minmax(48px,1fr) minmax(0,min(86vw,1400px)) minmax(48px,1fr);grid-template-rows:56px minmax(0,1fr) 42px;align-items:center;justify-items:center;padding:12px;touch-action:pan-y}
+.image-viewer{position:fixed;inset:0;z-index:10000;background:rgba(0,0,0,.94);display:grid;grid-template-columns:minmax(0,1fr);grid-template-rows:minmax(0,1fr) auto;align-items:center;justify-items:center;padding:12px;touch-action:pan-y;overflow:hidden}
 .image-viewer[hidden]{display:none!important}
-.image-viewer figure{grid-column:2;grid-row:2;display:grid;place-items:center;width:100%;height:100%;margin:0;min-width:0;min-height:0}
-.viewer-image{max-width:100%;max-height:100%;object-fit:contain;border-radius:6px;cursor:default;user-select:none;-webkit-user-drag:none}
-.viewer-caption{color:#eee;text-align:center;font-size:.9rem;padding:8px 0}
-.viewer-count{grid-column:2;grid-row:3;color:#ddd;font-size:.9rem}
+.image-viewer figure{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:100%;height:100%;margin:0;min-width:0;min-height:0}
+.viewer-image{display:block;width:auto;height:auto;max-width:calc(100vw - 32px);max-height:calc(100vh - 88px);max-height:calc(100dvh - 88px);object-fit:contain;border-radius:6px;cursor:default;user-select:none;-webkit-user-drag:none}
+.viewer-caption{flex:0 0 auto;max-width:100%;color:#eee;text-align:center;font-size:.9rem;padding:4px 0}
+.viewer-count{grid-column:1;grid-row:2;color:#ddd;font-size:.9rem}
 .viewer-close,.viewer-arrow{z-index:1;border:1px solid #ffffff50;border-radius:999px;background:#171a20;color:#fff;display:grid;place-items:center;cursor:pointer}
-.viewer-close{grid-column:3;grid-row:1;justify-self:end;width:44px;height:44px;font-size:1.7rem}
-.viewer-arrow{grid-row:2;width:44px;height:54px;font-size:2rem}
-.viewer-prev{grid-column:1}.viewer-next{grid-column:3}
+.viewer-close{position:absolute;top:max(12px,env(safe-area-inset-top));right:max(12px,env(safe-area-inset-right));width:44px;height:44px;font-size:1.7rem}
+.viewer-arrow{position:absolute;top:50%;transform:translateY(-50%);width:44px;height:54px;font-size:2rem}
+.viewer-prev{left:max(12px,env(safe-area-inset-left))}.viewer-next{right:max(12px,env(safe-area-inset-right))}
 .viewer-close:hover,.viewer-arrow:hover{background:#303640}
+@media (orientation:landscape) and (max-height:500px){.viewer-close{width:36px;height:36px}.viewer-arrow{width:36px;height:44px}}
 .steps ol{padding-left:24px;margin:6px 0}.steps>ol{padding-left:22px}.steps li{margin:6px 0}
 
 /* Keep every footer link fully visible on narrow phones. */
@@ -816,4 +817,24 @@ h1[data-icon]::before, h2[data-icon]::before { margin-right:.42em; }
 .testers-step h3, .testers-step p { margin:0; }
 .testers-step p { color:var(--tx2); }
 .testers-step .btn { margin-top:auto; }
+
+/* Destaque compacto para o programa de testers no ecrã inicial. */
+.home-tester-highlight {
+  grid-column:1 / -1;
+  display:grid;
+  grid-template-columns:minmax(0,1fr) auto;
+  align-items:center;
+  gap:12px 24px;
+  padding:20px 24px;
+  background:color-mix(in srgb,var(--card) 92%,var(--fire));
+}
+.home-tester-highlight h3 { margin:0 0 8px; color:var(--fire); }
+.home-tester-highlight p { margin:4px 0; font-size:.98rem; }
+.home-tester-highlight .home-tester-lead { color:var(--tx); font-weight:700; }
+.home-tester-highlight .home-tester-question { margin-top:10px; color:var(--tx); font-weight:600; }
+.home-tester-highlight .btn { white-space:nowrap; }
+@media (max-width:760px) {
+  .home-tester-highlight { grid-template-columns:1fr; padding:18px; }
+  .home-tester-highlight .btn { justify-self:start; }
+}
 

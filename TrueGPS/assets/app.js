@@ -298,7 +298,8 @@ Object.keys(REQUESTED_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},
     viewerCaption.textContent=item.alt;viewerCount.textContent=(viewerIndex+1)+' / '+viewerItems.length;
   }
   function openViewer(source){
-    viewerItems=$$('.gallery .thumb img').map(function(img){return{src:img.src,alt:img.alt||''}});
+    var gallery=source.closest('.gallery');
+    viewerItems=gallery?Array.prototype.slice.call(gallery.querySelectorAll('.thumb img')).map(function(img){return{src:img.src,alt:img.alt||''}}):[];
     if(!viewerItems.length)return;
     var activeSrc=source.currentSrc||source.src;
     var i=viewerItems.findIndex(function(item){return item.src===activeSrc});

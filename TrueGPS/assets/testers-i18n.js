@@ -40,3 +40,111 @@ window.TESTER_COPY_T = {
     nav_testers: "테스터", testers_title: "테스터 모집", testers_headline: "TrueGPS Speed 테스터가 되어 주세요!", testers_emphasis: "<strong>Google Play 정식 출시 전에 TrueGPS Speed를 개선할 수 있도록 도와주세요!</strong>", testers_intro: "TrueGPS Speed를 사용해 보고 테스트 프로그램에 참여할 Android 사용자를 찾고 있습니다.", testers_need: "실제 이동 중 앱을 사용하고 작동 방식, 정확도, 사용 편의성 및 발견한 문제에 대한 의견을 나눠 주실 분이 필요합니다.", testers_looking_title: "어떤 분을 찾고 있나요?", testers_period: "최소 <strong>14일 연속</strong> 비공개 테스트에 참여할 수 있는 분.", testers_during: "이 기간에 앱 기능을 살펴보고 평소 이동할 때 속도계를 사용하며, 제안이나 문제점을 공유해 주세요.", testers_how_title: "참여 방법", testers_step1_title: "1. Google 그룹에 가입", testers_step1_text: "TrueGPS Speed Testers 그룹을 방문해 가입을 요청하고 승인을 기다려 주세요.", testers_group_link: "테스터 그룹 가입", testers_step2_title: "2. 비공개 테스트 참여", testers_step2_text: "그룹 가입이 승인되면 아래 링크를 같은 Google 계정으로 열고 테스트 참여를 수락해 주세요.", testers_play_link: "Google Play 테스트 참여", testers_step3_title: "3. 앱 설치 및 사용", testers_step3_text: "Google Play에서 TrueGPS Speed를 설치하고 이동 중에 사용해 보세요.", testers_step4_title: "4. 의견 공유", testers_step4_text: "문제를 찾고 사용자 경험을 평가하며 개선점을 발견할 수 있도록 도와주세요.", testers_difference_title: "여러분의 도움이 큰 차이를 만듭니다!", testers_voluntary: "참여는 전액 무료이며 자발적입니다. 기술 전문가일 필요는 없습니다. 호환되는 Android 기기와 도움을 주려는 마음이면 충분합니다.", testers_impact: "모든 제안과 발견된 문제는 TrueGPS Speed를 더 나은 앱으로 만드는 데 도움이 됩니다.", testers_thanks: "프로젝트에 함께해 주셔서 감사합니다!"
   }
 };
+
+/* Destaque de testers apresentado no fim da secção Home. */
+Object.assign(window.TESTER_COPY_T.en, {
+  home_testers_heading: "Testers wanted",
+  home_testers_lead: "Help us improve TrueGPS Speed!",
+  home_testers_description: "Try the app, test its features on real journeys, and share your feedback.",
+  home_testers_question: "Would you like to join the closed test?",
+  home_testers_cta: "Become a Tester"
+});
+Object.assign(window.TESTER_COPY_T.pt, {
+  home_testers_heading: "Procuramos testadores",
+  home_testers_lead: "Ajuda-nos a melhorar a TrueGPS Speed!",
+  home_testers_description: "Experimenta a aplicação, testa as funcionalidades em deslocações reais e partilha a tua opinião.",
+  home_testers_question: "Queres participar no teste fechado?",
+  home_testers_cta: "Torna-te Tester"
+});
+Object.assign(window.TESTER_COPY_T.br, {
+  home_testers_heading: "Procuramos testadores",
+  home_testers_lead: "Ajude-nos a melhorar a TrueGPS Speed!",
+  home_testers_description: "Experimente o aplicativo, teste os recursos em trajetos reais e compartilhe sua opinião.",
+  home_testers_question: "Quer participar do teste fechado?",
+  home_testers_cta: "Seja um testador"
+});
+Object.assign(window.TESTER_COPY_T.fr, {
+  home_testers_heading: "Nous recherchons des testeurs",
+  home_testers_lead: "Aidez-nous à améliorer TrueGPS Speed !",
+  home_testers_description: "Essayez l’application, testez ses fonctionnalités lors de trajets réels et partagez votre avis.",
+  home_testers_question: "Souhaitez-vous participer au test fermé ?",
+  home_testers_cta: "Devenir testeur"
+});
+Object.assign(window.TESTER_COPY_T.es, {
+  home_testers_heading: "Buscamos probadores",
+  home_testers_lead: "¡Ayúdanos a mejorar TrueGPS Speed!",
+  home_testers_description: "Prueba la aplicación, usa sus funciones en desplazamientos reales y comparte tu opinión.",
+  home_testers_question: "¿Quieres participar en la prueba cerrada?",
+  home_testers_cta: "Hazte probador"
+});
+Object.assign(window.TESTER_COPY_T.de, {
+  home_testers_heading: "Wir suchen Tester",
+  home_testers_lead: "Hilf uns, TrueGPS Speed zu verbessern!",
+  home_testers_description: "Probiere die App aus, teste ihre Funktionen auf echten Fahrten und teile dein Feedback.",
+  home_testers_question: "Möchtest du am geschlossenen Test teilnehmen?",
+  home_testers_cta: "Werde Tester"
+});
+Object.assign(window.TESTER_COPY_T.it, {
+  home_testers_heading: "Cerchiamo tester",
+  home_testers_lead: "Aiutaci a migliorare TrueGPS Speed!",
+  home_testers_description: "Prova l’app, testa le sue funzioni durante spostamenti reali e condividi la tua opinione.",
+  home_testers_question: "Vuoi partecipare al test chiuso?",
+  home_testers_cta: "Diventa tester"
+});
+Object.assign(window.TESTER_COPY_T.ru, {
+  home_testers_heading: "Ищем тестировщиков",
+  home_testers_lead: "Помогите нам улучшить TrueGPS Speed!",
+  home_testers_description: "Попробуйте приложение, проверьте его функции в реальных поездках и поделитесь мнением.",
+  home_testers_question: "Хотите принять участие в закрытом тестировании?",
+  home_testers_cta: "Стать тестировщиком"
+});
+Object.assign(window.TESTER_COPY_T.tr, {
+  home_testers_heading: "Test kullanıcıları arıyoruz",
+  home_testers_lead: "TrueGPS Speed’i geliştirmemize yardım et!",
+  home_testers_description: "Uygulamayı dene, özelliklerini gerçek yolculuklarda test et ve görüşlerini paylaş.",
+  home_testers_question: "Kapalı teste katılmak ister misin?",
+  home_testers_cta: "Test kullanıcısı ol"
+});
+Object.assign(window.TESTER_COPY_T.id, {
+  home_testers_heading: "Kami mencari penguji",
+  home_testers_lead: "Bantu kami menyempurnakan TrueGPS Speed!",
+  home_testers_description: "Coba aplikasinya, uji fitur-fiturnya dalam perjalanan nyata, dan bagikan pendapatmu.",
+  home_testers_question: "Ingin ikut pengujian tertutup?",
+  home_testers_cta: "Jadilah penguji"
+});
+Object.assign(window.TESTER_COPY_T.hi, {
+  home_testers_heading: "हम परीक्षकों की तलाश में हैं",
+  home_testers_lead: "TrueGPS Speed को बेहतर बनाने में हमारी मदद करें!",
+  home_testers_description: "ऐप आज़माएँ, वास्तविक यात्राओं में इसकी सुविधाओं का परीक्षण करें और अपनी राय साझा करें।",
+  home_testers_question: "क्या आप बंद परीक्षण में भाग लेना चाहते हैं?",
+  home_testers_cta: "परीक्षक बनें"
+});
+Object.assign(window.TESTER_COPY_T.ja, {
+  home_testers_heading: "テスターを募集しています",
+  home_testers_lead: "TrueGPS Speedの改善にご協力ください！",
+  home_testers_description: "アプリを試し、実際の移動中に機能をテストして、感想をお聞かせください。",
+  home_testers_question: "クローズドテストに参加しませんか？",
+  home_testers_cta: "テスターになる"
+});
+Object.assign(window.TESTER_COPY_T.ko, {
+  home_testers_heading: "테스터를 모집합니다",
+  home_testers_lead: "TrueGPS Speed를 개선할 수 있도록 도와주세요!",
+  home_testers_description: "앱을 사용해 보고 실제 이동 중 기능을 테스트한 뒤 의견을 나눠 주세요.",
+  home_testers_question: "비공개 테스트에 참여하시겠어요?",
+  home_testers_cta: "테스터 되기"
+});
+
+/* Traduções da secção e galeria de configuração para os 13 idiomas. */
+Object.assign(window.TESTER_COPY_T.en, { nav_settings: "Configuration", t_settings: "Configuration", t_settings_images: "Configuration Images" });
+Object.assign(window.TESTER_COPY_T.pt, { nav_settings: "Configuração", t_settings: "Configuração", t_settings_images: "Imagens da Configuração" });
+Object.assign(window.TESTER_COPY_T.br, { nav_settings: "Configurações", t_settings: "Configurações", t_settings_images: "Imagens das Configurações" });
+Object.assign(window.TESTER_COPY_T.fr, { nav_settings: "Configuration", t_settings: "Configuration", t_settings_images: "Images de configuration" });
+Object.assign(window.TESTER_COPY_T.es, { nav_settings: "Configuración", t_settings: "Configuración", t_settings_images: "Imágenes de configuración" });
+Object.assign(window.TESTER_COPY_T.de, { nav_settings: "Einstellungen", t_settings: "Einstellungen", t_settings_images: "Einstellungsbilder" });
+Object.assign(window.TESTER_COPY_T.it, { nav_settings: "Impostazioni", t_settings: "Impostazioni", t_settings_images: "Immagini delle impostazioni" });
+Object.assign(window.TESTER_COPY_T.ru, { nav_settings: "Настройки", t_settings: "Настройки", t_settings_images: "Изображения настроек" });
+Object.assign(window.TESTER_COPY_T.tr, { nav_settings: "Ayarlar", t_settings: "Ayarlar", t_settings_images: "Ayar görselleri" });
+Object.assign(window.TESTER_COPY_T.id, { nav_settings: "Pengaturan", t_settings: "Pengaturan", t_settings_images: "Gambar pengaturan" });
+Object.assign(window.TESTER_COPY_T.hi, { nav_settings: "सेटिंग", t_settings: "सेटिंग", t_settings_images: "सेटिंग की तस्वीरें" });
+Object.assign(window.TESTER_COPY_T.ja, { nav_settings: "設定", t_settings: "設定", t_settings_images: "設定画面の画像" });
+Object.assign(window.TESTER_COPY_T.ko, { nav_settings: "설정", t_settings: "설정", t_settings_images: "설정 이미지" });
