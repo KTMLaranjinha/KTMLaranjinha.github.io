@@ -247,7 +247,7 @@ Object.keys(REQUESTED_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},
     $$('[data-i18n]').forEach(function (el) {
       // guarda o texto original (inglês) na primeira vez
       if (el.dataset.en == null) el.dataset.en = el.innerHTML;
-      var texto = (SITE_UI_T[l] || {})[el.dataset.i18n] || (CORE_COPY_T[l] || {})[el.dataset.i18n] || (SITE_COPY_T[l] || {})[el.dataset.i18n] || (T[l] || {})[el.dataset.i18n] || (EXTRA_T[l] || {})[el.dataset.i18n];
+      var texto = (window.TESTER_COPY_T && window.TESTER_COPY_T[l] || {})[el.dataset.i18n] || (SITE_UI_T[l] || {})[el.dataset.i18n] || (CORE_COPY_T[l] || {})[el.dataset.i18n] || (SITE_COPY_T[l] || {})[el.dataset.i18n] || (T[l] || {})[el.dataset.i18n] || (EXTRA_T[l] || {})[el.dataset.i18n];
       el.innerHTML = texto || el.dataset.en;
     });
     if (window.renderFeatures) window.renderFeatures(l);

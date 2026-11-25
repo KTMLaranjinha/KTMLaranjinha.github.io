@@ -1,4 +1,4 @@
-/* ===== CORES: muda aqui o aspeto de todo o site (tema escuro) ===== */
+﻿/* ===== CORES: muda aqui o aspeto de todo o site (tema escuro) ===== */
 :root {
   --bg:#0F1115;
   --card:#1A1D24;
@@ -37,8 +37,67 @@ body {
   background:var(--bg);
   color:var(--tx);
   font:400 1rem/1.6 Manrope,system-ui,sans-serif;
+  position:relative;
+  isolation:isolate;
 }
 
+/* Linhas neon verticais em movimento, com densidade e cores variadas. */
+body::before {
+  content:"";
+  position:fixed;
+  inset:0;
+  z-index:-1;
+  pointer-events:none;
+  opacity:.36;
+  background-image:
+    linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,190,64,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,190,64,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,190,64,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,190,64,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%);
+  background-size:2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px;
+  background-repeat:repeat-y;
+  background-position:2% 0px,5% 47px,8% 94px,11% 141px,14% 188px,17% 235px,20% 2px,23% 109px,26% 106px,29% 183px,32% 170px,35% 17px,38% 244px,41% 51px,44% 218px,47% 165px,50% 32px,53% 199px,56% 96px,59% 253px,62% 100px,65% 107px,68% 224px,71% 121px,74% 228px,77% 175px,80% 262px,83% 149px,86% 216px,89% 13px,92% 210px,95% 257px,98% 4px;
+  animation:neon-rain 12s linear infinite;
+}
+
+@keyframes neon-rain {
+  to {
+    background-position:2% 220px,5% 317px,8% 334px,11% 441px,14% 438px,17% 555px,20% 282px,23% 329px,26% 376px,29% 423px,32% 470px,35% 267px,38% 564px,41% 331px,44% 438px,47% 435px,50% 272px,53% 499px,56% 346px,59% 573px,62% 380px,65% 327px,68% 494px,71% 361px,74% 528px,77% 425px,80% 582px,83% 429px,86% 436px,89% 283px,92% 450px,95% 557px,98% 254px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body::before { animation:none; }
+}
 h1,h2,h3,.brand,.hud-n,.price {
   font-family:"Chakra Petch",sans-serif;
   line-height:1.1;
@@ -738,3 +797,23 @@ h1[data-icon]::before, h2[data-icon]::before { margin-right:.42em; }
 }
 
 .about-ending { font-weight:700; }
+
+/* Mantém os cartões dos dois Hall of Fame dentro da área entre as setas. */
+#fame .carousel, #fame-play .carousel { padding-left:26px; padding-right:26px; }
+#fame .carousel .track, #fame-play .carousel .track { padding-left:0; padding-right:0; }
+#fame .track > blockquote.card, #fame-play .track > blockquote.card { flex-basis:min(340px,100%); }
+#fame .carousel .arrow, #fame-play .carousel .arrow { width:22px; height:22px; font-size:.9rem; }
+#fame .carousel .arrow.prev, #fame-play .carousel .arrow.prev { left:0; }
+#fame .carousel .arrow.next, #fame-play .carousel .arrow.next { right:0; }
+
+/* Secção do programa de testers. */
+.testers-section > h3 { margin:28px 0 12px; }
+.testers-intro, .testers-outro { max-width:860px; }
+.testers-intro h3, .testers-outro h3 { margin:0 0 14px; }
+.testers-intro p, .testers-outro p { color:var(--tx2); }
+.testers-steps { margin:18px 0 30px; }
+.testers-step { display:flex; flex-direction:column; align-items:flex-start; gap:14px; }
+.testers-step h3, .testers-step p { margin:0; }
+.testers-step p { color:var(--tx2); }
+.testers-step .btn { margin-top:auto; }
+
