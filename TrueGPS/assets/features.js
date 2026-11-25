@@ -1,4 +1,4 @@
-/* =========================================================
+﻿/* =========================================================
    TrueGPS Speed – TEXTOS DAS FUNCIONALIDADES (por língua)
 
    COMO ACRESCENTAR UMA LÍNGUA:
@@ -323,7 +323,7 @@ FEATURES.en = {
 
 
 /* ------------------------- FR ------------------------- */
-FEATURES.fr = FEATURES.en = {
+FEATURES.fr = {
 
   intro: [
     "🎯 TrueGPS vise à être la MEILLEURE et la plus personnalisable application GPS/HUD sur le Play Store.",
@@ -473,7 +473,7 @@ FEATURES.fr = FEATURES.en = {
 
 
 /* ------------------------- ES ------------------------- */
-FEATURES.es = FEATURES.en = {
+FEATURES.es = {
 
   intro: [
     "🎯 TrueGPS pretende ser la MEJOR y más PERSONALIZABLE aplicación de GPS/HUD en Play Store.",
@@ -623,7 +623,7 @@ FEATURES.es = FEATURES.en = {
 
 
 /* ------------------------- DE ------------------------- */
-FEATURES.de = FEATURES.en = {
+FEATURES.de = {
 
   intro: [
     "🎯 TrueGPS möchte die BESTE und ANPASSBARSTE GPS/HUD-App im Play Store sein.",
@@ -773,7 +773,7 @@ FEATURES.de = FEATURES.en = {
 
 
 /* ------------------------- IT ------------------------- */
-FEATURES.it = FEATURES.en = {
+FEATURES.it = {
 
   intro: [
     "🎯 TrueGPS mira a essere l'app GPS/HUD MIGLIORE e PIÙ PERSONALIZZABILE sul Play Store.",
@@ -923,7 +923,7 @@ FEATURES.it = FEATURES.en = {
 
 
 /* ------------------------- RU ------------------------- */
-FEATURES.ru = FEATURES.en = {
+FEATURES.ru = {
 
   intro: [
     "🎯 TrueGPS стремится стать ЛУЧШИМ и НАСТРАИВАЕМЫМ приложением GPS/HUD в магазине Play Store.",
@@ -1073,7 +1073,7 @@ FEATURES.ru = FEATURES.en = {
 
 
 /* ------------------------- TR ------------------------- */
-FEATURES.tr = FEATURES.en = {
+FEATURES.tr = {
 
   intro: [
     "🎯 TrueGPS, Play Store'daki EN İYİ ve en ÖZELLEŞTİRİLEBİLİR GPS/HUD uygulaması olmayı hedeflemektedir.",
@@ -1223,7 +1223,7 @@ FEATURES.tr = FEATURES.en = {
 
 
 /* ------------------------- ID ------------------------- */
-FEATURES.id = FEATURES.en = {
+FEATURES.id = {
 
   intro: [
     "🎯 TrueGPS bertujuan untuk menjadi aplikasi GPS/HUD TERBAIK dan paling DAPAT DISESUAIKAN di Play Store.",
@@ -1373,7 +1373,7 @@ FEATURES.id = FEATURES.en = {
 
 
 /* ------------------------- HI ------------------------- */
-FEATURES.hi = FEATURES.en = {
+FEATURES.hi = {
 
   intro: [
     "🎯 ट्रूजीपीएस का लक्ष्य प्ले स्टोर पर सबसे अच्छा और सबसे अनुकूलन योग्य जीपीएस/एचयूडी ऐप बनना है।",
@@ -1523,7 +1523,7 @@ FEATURES.hi = FEATURES.en = {
 
 
 /* ------------------------- JA ------------------------- */
-FEATURES.ja = FEATURES.en = {
+FEATURES.ja = {
 
   intro: [
     "🎯 TrueGPS は、Play ストアで最もカスタマイズ可能な GPS/HUD アプリになることを目指しています。",
@@ -1673,7 +1673,7 @@ FEATURES.ja = FEATURES.en = {
 
 
 /* ------------------------- KO ------------------------- */
-FEATURES.ko = FEATURES.en = {
+FEATURES.ko = {
 
   intro: [
     "🎯 TrueGPS는 Play 스토어에서 최고의 맞춤 설정이 가능한 GPS/HUD 앱을 목표로 합니다.",
@@ -1823,7 +1823,7 @@ FEATURES.ko = FEATURES.en = {
 
 
 /* ------------------------- BR ------------------------- */
-FEATURES.br = FEATURES.en = {
+FEATURES.br = {
 
   intro: [
     "🎯 TrueGPS pretende ser o MELHOR e mais PERSONALIZÁVEL aplicativo GPS/HUD na Play Store.",
