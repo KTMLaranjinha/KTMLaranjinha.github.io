@@ -41,15 +41,11 @@ body {
   isolation:isolate;
 }
 
-/* Linhas neon verticais em movimento, com densidade e cores variadas. */
-body::before {
-  content:"";
-  position:fixed;
-  inset:0;
-  z-index:-1;
-  pointer-events:none;
-  opacity:.36;
-  background-image:
+/* Fluxos neon com três ritmos para dar movimento independente às linhas. */
+
+.neon-rain-layer { position:fixed; inset:0; z-index:-1; pointer-events:none; opacity:.36; }
+
+.neon-rain-fast { background-image:
     linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.68) 49%,transparent 58%),
     linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.56) 49%,transparent 58%),
     linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%),
@@ -69,6 +65,19 @@ body::before {
     linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%),
     linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.56) 49%,transparent 58%),
     linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.56) 49%,transparent 58%);
+  background-size:2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px;
+  background-repeat:repeat-y;
+  background-position:1% 0px,5.9% 47px,10.8% 94px,15.7% 141px,20.6% 188px,25.5% 235px,30.4% 2px,35.3% 109px,40.2% 106px,45.1% 183px,50% 170px,54.9% 17px,59.8% 244px,64.7% 51px,69.6% 218px,74.5% 165px,79.4% 32px,84.3% 199px,89.2% 96px,94.1% 253px;
+  animation:neon-rain-fast 5.3s linear infinite;
+}
+
+@keyframes neon-rain-fast { to { background-position:1% 220px,5.9% 317px,10.8% 334px,15.7% 441px,20.6% 438px,25.5% 555px,30.4% 282px,35.3% 329px,40.2% 376px,45.1% 423px,50% 470px,54.9% 267px,59.8% 564px,64.7% 331px,69.6% 438px,74.5% 435px,79.4% 272px,84.3% 499px,89.2% 346px,94.1% 573px; } }
+
+.neon-rain-medium { background-image:
+    linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%),
     linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.56) 49%,transparent 58%),
     linear-gradient(180deg,transparent 0 40%,rgba(255,190,64,.68) 49%,transparent 58%),
     linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.56) 49%,transparent 58%),
@@ -82,22 +91,62 @@ body::before {
     linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.56) 49%,transparent 58%),
     linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.68) 49%,transparent 58%),
     linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.56) 49%,transparent 58%),
-    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%);
-  background-size:2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px;
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,190,64,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.68) 49%,transparent 58%);
+  background-size:2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px;
   background-repeat:repeat-y;
-  background-position:2% 0px,5% 47px,8% 94px,11% 141px,14% 188px,17% 235px,20% 2px,23% 109px,26% 106px,29% 183px,32% 170px,35% 17px,38% 244px,41% 51px,44% 218px,47% 165px,50% 32px,53% 199px,56% 96px,59% 253px,62% 100px,65% 107px,68% 224px,71% 121px,74% 228px,77% 175px,80% 262px,83% 149px,86% 216px,89% 13px,92% 210px,95% 257px,98% 4px;
-  animation:neon-rain 12s linear infinite;
+  background-position:2.6% 71px,7.5% 118px,12.4% 165px,17.3% 212px,22.2% 259px,27.1% 26px,32% 133px,36.9% 130px,41.8% 207px,46.7% 194px,51.6% 41px,56.5% 268px,61.4% 75px,66.3% 22px,71.2% 189px,76.1% 56px,81% 223px,85.9% 120px,90.8% 277px,95.7% 124px;
+  animation:neon-rain-medium 8s linear infinite;
 }
 
-@keyframes neon-rain {
-  to {
-    background-position:2% 220px,5% 317px,8% 334px,11% 441px,14% 438px,17% 555px,20% 282px,23% 329px,26% 376px,29% 423px,32% 470px,35% 267px,38% 564px,41% 331px,44% 438px,47% 435px,50% 272px,53% 499px,56% 346px,59% 573px,62% 380px,65% 327px,68% 494px,71% 361px,74% 528px,77% 425px,80% 582px,83% 429px,86% 436px,89% 283px,92% 450px,95% 557px,98% 254px;
-  }
+@keyframes neon-rain-medium { to { background-position:2.6% 341px,7.5% 358px,12.4% 465px,17.3% 462px,22.2% 579px,27.1% 306px,32% 353px,36.9% 400px,41.8% 447px,46.7% 494px,51.6% 291px,56.5% 588px,61.4% 355px,66.3% 242px,71.2% 459px,76.1% 296px,81% 523px,85.9% 370px,90.8% 597px,95.7% 404px; } }
+
+.neon-rain-slow { background-image:
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,190,64,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,190,64,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(176,108,255,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,255,255,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,65,82,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,190,64,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(255,122,26,.56) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(34,211,142,.68) 49%,transparent 58%),
+    linear-gradient(180deg,transparent 0 40%,rgba(77,163,255,.56) 49%,transparent 58%);
+  background-size:2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px,2px 270px,2px 240px,2px 300px,2px 250px,2px 320px,2px 280px,2px 220px;
+  background-repeat:repeat-y;
+  background-position:4.2% 142px,9.1% 189px,14% 236px,18.9% 283px,23.8% 50px,28.7% 157px,33.6% 154px,38.5% 231px,43.4% 218px,48.3% 65px,53.2% 292px,58.1% 99px,63% 46px,67.9% 213px,72.8% 80px,77.7% 247px,82.6% 144px,87.5% 301px,92.4% 148px,97.3% 155px;
+  animation:neon-rain-slow 12s linear infinite;
 }
 
-@media (prefers-reduced-motion: reduce) {
-  body::before { animation:none; }
-}
+@keyframes neon-rain-slow { to { background-position:4.2% 382px,9.1% 489px,14% 486px,18.9% 603px,23.8% 330px,28.7% 377px,33.6% 424px,38.5% 471px,43.4% 518px,48.3% 315px,53.2% 612px,58.1% 379px,63% 266px,67.9% 483px,72.8% 320px,77.7% 547px,82.6% 394px,87.5% 621px,92.4% 428px,97.3% 375px; } }
+
+@media (prefers-reduced-motion: reduce) { .neon-rain-layer { animation:none!important; } }
+
+/* Colunas verticais com a marca, intercaladas com os traços neon. */
+.neon-word-rain { position:fixed; inset:0; z-index:-1; overflow:hidden; pointer-events:none; opacity:.28; }
+.word-stream { position:absolute; top:0; width:1em; writing-mode:vertical-rl; text-orientation:upright; white-space:nowrap; font:600 clamp(10px,.78vw,13px)/1.5 "Chakra Petch",monospace; letter-spacing:.5em; word-spacing:1em; text-shadow:0 0 7px currentColor; animation:word-rain 144s linear infinite; }
+.word-stream::before { content:"TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed　　　 TrueGPS Speed"; }
+.stream-orange { left:8%; color:#ff7a1a; animation-duration:104s; animation-delay:-32s; }
+.stream-green { left:23%; color:#22d38e; animation-duration:136s; animation-delay:-88s; }
+.stream-blue { left:39%; color:#4da3ff; animation-duration:116s; animation-delay:-56s; }
+.stream-violet { left:56%; color:#b06cff; animation-duration:168s; animation-delay:-128s; }
+.stream-red { left:73%; color:#ff4152; animation-duration:128s; animation-delay:-24s; }
+.stream-white { left:90%; color:#fff; animation-duration:152s; animation-delay:-96s; }
+@keyframes word-rain { from { transform:translateY(100vh); } to { transform:translateY(-105%); } }
+@media (prefers-reduced-motion: reduce) { .word-stream { animation:none!important; } }
+
 h1,h2,h3,.brand,.hud-n,.price {
   font-family:"Chakra Petch",sans-serif;
   line-height:1.1;
@@ -697,6 +746,13 @@ footer {
 .video-thumbnail { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
 .video:has(.video-thumbnail)::after { content:""; position:absolute; inset:0; background:rgba(0,0,0,.28); pointer-events:none; }
 .video .play { position:relative; z-index:1; box-shadow:0 2px 18px #0008; }
+.video-thumbs { display:flex; gap:12px; max-width:820px; margin:12px auto 4px; padding:4px 2px 10px; overflow-x:auto; scroll-snap-type:x mandatory; scrollbar-width:thin; }
+.video-thumb { flex:0 0 190px; display:flex; flex-direction:column; gap:7px; padding:8px; border:1px solid var(--line); border-radius:12px; background:var(--card); color:var(--tx); text-align:left; cursor:pointer; scroll-snap-align:start; transition:border-color .15s,transform .15s; }
+.video-thumb:hover { border-color:var(--fire); transform:translateY(-2px); }
+.video-thumb.on { border-color:var(--pri); box-shadow:0 0 0 1px var(--pri); }
+.video-thumb img { display:block; width:100%; aspect-ratio:16/9; object-fit:cover; border-radius:7px; }
+.video-thumb-title { font-size:.9rem; font-weight:700; line-height:1.35; }
+@media(max-width:520px) { .video-thumb { flex-basis:155px; } }
 .premium-grid .premium-free { border-top:3px solid #a3a3a3; }
 /* App logo e novas secções de apresentação */
 .cta { align-items:center; }
@@ -738,8 +794,6 @@ section { padding:64px 20px; }
 .btn:has(.play-store-badge) { display:inline-flex; align-items:center; justify-content:center; }
 @media (max-width:760px) { section { padding:48px 20px; } }
 section > h2 { text-align:left; }
-
-.dl > h2 { text-align:center; }
 
 .play-cta { gap:10px; }
 .btn .play-store-badge { margin-right:0; }
@@ -837,4 +891,7 @@ h1[data-icon]::before, h2[data-icon]::before { margin-right:.42em; }
   .home-tester-highlight { grid-template-columns:1fr; padding:18px; }
   .home-tester-highlight .btn { justify-self:start; }
 }
+
+
+
 

@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en" data-theme="dark">
 <head>
 <meta charset="utf-8">
@@ -15,6 +15,17 @@
 <link rel="stylesheet" href="assets/style.css">
 </head>
 <body>
+<div class="neon-rain-layer neon-rain-fast" aria-hidden="true"></div>
+<div class="neon-rain-layer neon-rain-medium" aria-hidden="true"></div>
+<div class="neon-rain-layer neon-rain-slow" aria-hidden="true"></div>
+<div class="neon-word-rain" aria-hidden="true">
+  <span class="word-stream stream-orange"></span>
+  <span class="word-stream stream-green"></span>
+  <span class="word-stream stream-blue"></span>
+  <span class="word-stream stream-violet"></span>
+  <span class="word-stream stream-red"></span>
+  <span class="word-stream stream-white"></span>
+</div>
 <!-- ============ CABEÇALHO: logótipo, menu, língua, tema ============ -->
 <header class="top">
   <a class="brand" href="#home">
@@ -38,7 +49,7 @@
     <a data-icon="❓" href="#faq" data-i18n="nav_faq">FAQ</a>
     <a data-icon="❤️" href="#links" data-i18n="nav_support">Support</a>
     <a data-icon="🛒" href="#products" data-i18n="nav_products">Recommended Products</a>
-    <a data-icon="🤓" href="#testers" data-i18n="nav_testers">Testers</a>
+    <a data-icon="👥" href="#testers" data-i18n="nav_testers">Testers</a>
     <a data-icon="📥" href="#download" data-i18n="nav_download">Download</a>
   </nav>
   <select id="lang" aria-label="Language"></select>
@@ -79,8 +90,9 @@
 <section id="action">
   <h2 data-icon="🚗" data-i18n="t_action">TrueGPS in Action</h2>
   <h3 class="action-label" data-i18n="t_video_label">Video</h3>
-  <!-- data-yt = ID do vídeo | data-list = ID da playlist (apaga o data-list se não quiseres playlist) -->
+  <!-- O vídeo principal e a faixa de pré-visualizações são preenchidos a partir de videoItems em assets/app.js. -->
   <div id="video" class="video" data-yt="USXWu43mxAE" data-list="PLcLuVCmpO6rU" role="button" tabindex="0" aria-label="Play video"><img class="video-thumbnail" src="https://i.ytimg.com/vi/USXWu43mxAE/hqdefault.jpg" alt="TrueGPS Speed video thumbnail"><span class="play">▶</span></div>
+  <div id="video-thumbs" class="video-thumbs" aria-label="Video selection"></div>
   <button id="copy-video-url" class="btn copy-video-btn" type="button" data-i18n="copy_video_url">Copy video link</button><p id="copy-video-status" class="copy-video-status" aria-live="polite"></p>
   <p class="note playlist-link"><a class="youtube-logo-link" href="https://www.youtube.com/watch?v=USXWu43mxAE&list=PLcLuVCmpO6rU" target="_blank" rel="noopener" aria-label="Open TrueGPS Speed YouTube playlist"><img src="assets/logos/logo_youtube.png" alt="YouTube" width="60" height="60"></a><a href="https://www.youtube.com/watch?v=USXWu43mxAE&list=PLcLuVCmpO6rU" target="_blank" rel="noopener" data-i18n="video_playlist">Watch the full playlist on YouTube</a></p>
   <h3 class="action-label" data-i18n="t_images_label">Images</h3>
@@ -550,7 +562,7 @@
 
 <!-- ============ TESTERS ============ -->
 <section id="testers" class="testers-section">
-  <h2 data-icon="🤓" data-i18n="testers_title">Testers</h2>
+  <h2 data-icon="👥" data-i18n="testers_title">Testers</h2>
   <div class="testers-intro">
     <h3 data-i18n="testers_headline">Become a TrueGPS Speed Tester!</h3>
     <p class="lead" data-i18n="testers_emphasis"><strong>Help us improve TrueGPS Speed before its public release on Google Play!</strong></p>
@@ -591,9 +603,9 @@
 
 <!-- ============ DOWNLOAD ============ -->
 <section id="download" class="dl">
+  <h2 data-icon="📥" data-i18n="t_download">Download</h2>
   <img class="download-logo logo-dark" src="assets/logos/logo.png" alt="TrueGPS Speed"><img class="download-logo logo-light" src="assets/logos/logo0.png" alt="TrueGPS Speed">
   <p class="download-slogan" data-i18n="download_slogan">Designed for drivers who like things their way.</p>
-  <h2 data-icon="📥" data-i18n="t_download">Download</h2>
   <div class="download-cta">
     <a class="btn primary big play-cta" href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed"><img class="play-store-badge" src="assets/logos/logo_playstore.jpg" alt="" aria-hidden="true"><span data-i18n="cta_play">Download on Google Play</span><img class="button-app-icon" src="assets/logos/truegpsspeed_logo_1238x1238.jpg" alt="" aria-hidden="true"></a>
   </div>

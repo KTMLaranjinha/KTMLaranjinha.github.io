@@ -439,6 +439,60 @@ Object.keys(REQUESTED_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},
 
   /* ---------- 5) VÍDEO: o YouTube só carrega ao clicar ---------- */
   var video = $('#video');
+  var videoThumbs = $('#video-thumbs');
+
+  // TODO: Colocar links de vídeos aqui: acrescentar objetos com id, title e, opcionalmente, list.
+  var videoItems = [
+    { id: 'USXWu43mxAE', title: 'TrueGPS Speed Promo', list: 'PLcLuVCmpO6rU' },
+    { id: 'DDQIcOvMUfo', title: 'GPS Service', list: 'PLcLuVCmpO6rU' }
+  ];
+
+  function mostrarVideoSelecionado(item) {
+    if (!video || !item) return;
+    video.dataset.yt = item.id;
+    if (item.list) video.dataset.list = item.list;
+    else delete video.dataset.list;
+    video.innerHTML = '';
+    var imagem = document.createElement('img');
+    imagem.className = 'video-thumbnail';
+    imagem.src = 'https://i.ytimg.com/vi/' + item.id + '/hqdefault.jpg';
+    imagem.alt = item.title + ' video thumbnail';
+    var play = document.createElement('span');
+    play.className = 'play';
+    play.textContent = '▶';
+    video.appendChild(imagem);
+    video.appendChild(play);
+    video.setAttribute('role', 'button');
+    video.setAttribute('tabindex', '0');
+  }
+
+  if (videoThumbs) {
+    videoItems.forEach(function (item, index) {
+      var button = document.createElement('button');
+      button.type = 'button';
+      button.className = 'video-thumb' + (index === 0 ? ' on' : '');
+      button.setAttribute('aria-label', item.title);
+      button.setAttribute('aria-pressed', index === 0 ? 'true' : 'false');
+      var image = document.createElement('img');
+      image.src = 'https://i.ytimg.com/vi/' + item.id + '/mqdefault.jpg';
+      image.alt = '';
+      image.loading = 'lazy';
+      var title = document.createElement('span');
+      title.className = 'video-thumb-title';
+      title.textContent = item.title;
+      button.appendChild(image);
+      button.appendChild(title);
+      button.addEventListener('click', function () {
+        mostrarVideoSelecionado(item);
+        videoThumbs.querySelectorAll('.video-thumb').forEach(function (thumb) {
+          var ativo = thumb === button;
+          thumb.classList.toggle('on', ativo);
+          thumb.setAttribute('aria-pressed', ativo ? 'true' : 'false');
+        });
+      });
+      videoThumbs.appendChild(button);
+    });
+  }
 
   function carregarVideo() {
     var f = document.createElement('iframe');
@@ -470,10 +524,12 @@ Object.keys(REQUESTED_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},
     };
   }
 
-  video.onclick = carregarVideo;
-  video.onkeydown = function (e) {
+  if (video) {
+    video.onclick = carregarVideo;
+    video.onkeydown = function (e) {
     if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); carregarVideo(); }
-  };
+    };
+  }
 
 })();
 
