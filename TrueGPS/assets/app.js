@@ -135,6 +135,23 @@
     ja: { hero_title:"あなたの速度。<br>あなたのHUD。<br>あなたらしく。",hero_sub:"Android向けの高機能GPS速度計とHUD。単なる速度計ではなく、速度の表示方法を自由にコントロールできます。",cta_play:"Google Playでダウンロード",cta_watch:"動画を見る",video_playlist:"YouTubeの全プレイリストを見る",copy_video_url:"動画リンクをコピー",copy_video_success:"動画リンクをコピーしました。",copy_video_failed:"コピーできませんでした。YouTubeで動画を開いてください。",copy_video_prompt:"動画を開くには表示されたアドレスをコピーしてください。",fame_lead:"いつかいただきたいレビューです。目指す体験の例であり、実際のユーザーレビューではありません。実際のレビューが掲載されたら置き換えます。",premium_free:"⚪ 無料",premium_free_desc:"広告付きの基本的な速度計とHUD。",premium_monthly:"🟢 Premium月額",premium_monthly_desc:"すべての機能を試すのに最適です。",premium_yearly:"🔵 Premium年額",premium_yearly_desc:"月額プランよりお得です。",premium_lifetime:"🟠 Premium買い切り",premium_lifetime_desc:"一度のお支払いですべて利用可能。今後のPremium機能も含まれます。",tag_example:"例",tag_motto:"モットー" },
     ko: { hero_title:"나의 속도.<br>나의 HUD.<br>나만의 방식.",hero_sub:"Android용 전문 GPS 속도계와 HUD입니다. 단순한 속도계가 아니라 속도 표시 방식을 완전히 제어할 수 있습니다.",cta_play:"Google Play에서 다운로드",cta_watch:"동영상 보기",video_playlist:"YouTube 전체 재생목록 보기",copy_video_url:"동영상 링크 복사",copy_video_success:"동영상 링크를 복사했습니다.",copy_video_failed:"복사하지 못했습니다. YouTube에서 동영상을 여세요.",copy_video_prompt:"동영상을 열려면 표시된 주소를 복사하세요.",fame_lead:"언젠가 받고 싶은 리뷰입니다. 제공하고자 하는 경험의 예시이며 실제 사용자 리뷰가 아닙니다. 실제 리뷰가 등록되면 교체됩니다.",premium_free:"⚪ 무료",premium_free_desc:"광고가 포함된 기본 속도계와 HUD.",premium_monthly:"🟢 월간 Premium",premium_monthly_desc:"모든 기능을 체험하기에 좋습니다.",premium_yearly:"🔵 연간 Premium",premium_yearly_desc:"월간 요금제보다 경제적입니다.",premium_lifetime:"🟠 평생 Premium",premium_lifetime_desc:"일회성 결제입니다. 앞으로 추가될 Premium 기능까지 모두 잠금 해제됩니다.",tag_example:"예시",tag_motto:"좌우명" }
   };
+  var CHANGELOG_COPY_T = {
+    en: { news_version:"Version 1.0",news_added:"Added",news_speedometer:"Speedometer and HUD",news_widgets_themes:"Widgets and themes",news_premium:"Premium",news_changed:"Changed",news_fixed:"Fixed" },
+    pt: { news_version:"Versão 1.0",news_added:"Adicionado",news_speedometer:"Velocímetro e HUD",news_widgets_themes:"Widgets e temas",news_premium:"Premium",news_changed:"Alterado",news_fixed:"Corrigido" },
+    br: { news_version:"Versão 1.0",news_added:"Adicionado",news_speedometer:"Velocímetro e HUD",news_widgets_themes:"Widgets e temas",news_premium:"Premium",news_changed:"Alterado",news_fixed:"Corrigido" },
+    fr: { news_version:"Version 1.0",news_added:"Ajouté",news_speedometer:"Compteur de vitesse et HUD",news_widgets_themes:"Widgets et thèmes",news_premium:"Premium",news_changed:"Modifié",news_fixed:"Corrigé" },
+    es: { news_version:"Versión 1.0",news_added:"Añadido",news_speedometer:"Velocímetro y HUD",news_widgets_themes:"Widgets y temas",news_premium:"Premium",news_changed:"Cambiado",news_fixed:"Corregido" },
+    de: { news_version:"Version 1.0",news_added:"Hinzugefügt",news_speedometer:"Tachometer und HUD",news_widgets_themes:"Widgets und Designs",news_premium:"Premium",news_changed:"Geändert",news_fixed:"Behoben" },
+    it: { news_version:"Versione 1.0",news_added:"Aggiunto",news_speedometer:"Tachimetro e HUD",news_widgets_themes:"Widget e temi",news_premium:"Premium",news_changed:"Modificato",news_fixed:"Corretto" },
+    ru: { news_version:"Версия 1.0",news_added:"Добавлено",news_speedometer:"Спидометр и HUD",news_widgets_themes:"Виджеты и темы",news_premium:"Premium",news_changed:"Изменено",news_fixed:"Исправлено" },
+    tr: { news_version:"Sürüm 1.0",news_added:"Eklendi",news_speedometer:"Hız göstergesi ve HUD",news_widgets_themes:"Widget'lar ve temalar",news_premium:"Premium",news_changed:"Değiştirildi",news_fixed:"Düzeltildi" },
+    id: { news_version:"Versi 1.0",news_added:"Ditambahkan",news_speedometer:"Speedometer dan HUD",news_widgets_themes:"Widget dan tema",news_premium:"Premium",news_changed:"Diubah",news_fixed:"Diperbaiki" },
+    hi: { news_version:"संस्करण 1.0",news_added:"जोड़ा गया",news_speedometer:"स्पीडोमीटर और HUD",news_widgets_themes:"विजेट और थीम",news_premium:"Premium",news_changed:"बदला गया",news_fixed:"ठीक किया गया" },
+    ja: { news_version:"バージョン1.0",news_added:"追加",news_speedometer:"スピードメーターとHUD",news_widgets_themes:"ウィジェットとテーマ",news_premium:"Premium",news_changed:"変更",news_fixed:"修正" },
+    ko: { news_version:"버전 1.0",news_added:"추가됨",news_speedometer:"속도계 및 HUD",news_widgets_themes:"위젯 및 테마",news_premium:"Premium",news_changed:"변경됨",news_fixed:"수정됨" }
+  };
+  Object.keys(CHANGELOG_COPY_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},EXTRA_T[code]||{},CHANGELOG_COPY_T[code]); });
+
   var REQUESTED_T = {
  en:{
   t_fame_desired:"Hall of Fame we hope for!",fame2_lead_updated:"Your Play Store review could be featured here soon.",fame2_placeholder:"Your review can be here!<br>Updated soon.",roadmap_title:"Roadmap",
@@ -251,6 +268,7 @@ Object.keys(REQUESTED_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},
       el.innerHTML = texto || el.dataset.en;
     });
     if (window.renderFeatures) window.renderFeatures(l);
+    if (window.renderFaq) window.renderFaq(l);
     save('lang', l);
     syncTermsLink();
   }
@@ -280,6 +298,60 @@ Object.keys(REQUESTED_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},
   };
 
 
+  /* ---------- 3b) MENU VERTICAL ☰ ----------
+     Abre uma lista vertical com as mesmas opções da linha de atalhos (<nav>).
+     A lista é construída sempre que o menu abre, a partir dos links do <nav>:
+       - acompanha o idioma escolhido;
+       - se acrescentares uma opção ao <nav> no HTML, aparece aqui sozinha.
+     Fecha com: novo toque no ☰, toque fora, tecla Esc ou escolha de uma opção. */
+  var menuBtn   = $('#menu-toggle');
+  var menuPanel = $('#section-menu');
+
+  function fecharMenu() {
+    if (!menuPanel || menuPanel.hidden) return;
+    menuPanel.hidden = true;
+    menuBtn.setAttribute('aria-expanded', 'false');
+  }
+
+  function abrirMenu() {
+    // Copia cada link do <nav> (texto atual, ícone e destino)
+    menuPanel.innerHTML = '';
+    $$('header.top nav a').forEach(function (origem) {
+      var item = document.createElement('a');
+      item.href = origem.getAttribute('href');
+      item.textContent = origem.textContent;
+      item.setAttribute('data-icon', origem.getAttribute('data-icon') || '');
+      menuPanel.appendChild(item);
+    });
+    menuPanel.scrollTop = 0;
+    menuPanel.hidden = false;
+    menuBtn.setAttribute('aria-expanded', 'true');
+  }
+
+  if (menuBtn && menuPanel) {
+    // Toque no botão: abre ou fecha
+    menuBtn.onclick = function (e) {
+      e.stopPropagation();
+      if (menuPanel.hidden) { abrirMenu(); } else { fecharMenu(); }
+    };
+
+    // Toque numa opção: fecha o menu (o link faz o scroll até à secção)
+    menuPanel.onclick = function (e) {
+      if (e.target.closest('a')) fecharMenu();
+    };
+
+    // Toque fora do menu: fecha
+    document.addEventListener('click', function (e) {
+      if (!menuPanel.hidden && !menuPanel.contains(e.target) && e.target !== menuBtn) fecharMenu();
+    });
+
+    // Tecla Esc: fecha e devolve o foco ao botão
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && !menuPanel.hidden) { fecharMenu(); menuBtn.focus(); }
+    });
+  }
+
+
   /* ---------- 4) GALERIA DE SCREENSHOTS ----------
      Imagem grande + miniaturas. Muda com: clique na miniatura, setas,
      swipe (telemóvel), teclas ← → e autoplay lento.
@@ -289,13 +361,18 @@ Object.keys(REQUESTED_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},
   var viewer=$('#image-viewer');
   var viewerImage=viewer?viewer.querySelector('.viewer-image'):null;
   var viewerCaption=viewer?viewer.querySelector('.viewer-caption'):null;
+  var viewerTitle=viewer?viewer.querySelector('.viewer-title'):null;
   var viewerCount=viewer?viewer.querySelector('.viewer-count'):null;
   var viewerIndex=0,viewerItems=[],viewerFocus=null,viewerScroll=0,viewerOverflow='';
+  var viewerInfoTimer=null;
   function showViewerImage(i){
     if(!viewerItems.length)return;
     viewerIndex=(i+viewerItems.length)%viewerItems.length;
     var item=viewerItems[viewerIndex];viewerImage.src=item.src;viewerImage.alt=item.alt;
-    viewerCaption.textContent=item.alt;viewerCount.textContent=(viewerIndex+1)+' / '+viewerItems.length;
+    viewerTitle.textContent=item.alt;viewerCount.textContent=(viewerIndex+1)+' / '+viewerItems.length;
+    viewerCaption.classList.remove('is-fading');
+    clearTimeout(viewerInfoTimer);
+    viewerInfoTimer=setTimeout(function(){viewerCaption.classList.add('is-fading')},2500);
   }
   function openViewer(source){
     var gallery=source.closest('.gallery');
@@ -309,6 +386,7 @@ Object.keys(REQUESTED_T).forEach(function(code){ EXTRA_T[code]=Object.assign({},
   }
   function closeViewer(){
     if(viewer.hidden)return;
+    clearTimeout(viewerInfoTimer);
     viewer.hidden=true;viewer.setAttribute('aria-hidden','true');document.body.style.overflow=viewerOverflow;window.scrollTo(0,viewerScroll);
     if(viewerFocus&&viewerFocus.isConnected){try{viewerFocus.focus({preventScroll:true})}catch(e){viewerFocus.focus()}}
   }

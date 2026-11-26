@@ -20,11 +20,8 @@
 <div class="neon-rain-layer neon-rain-slow" aria-hidden="true"></div>
 <div class="neon-word-rain" aria-hidden="true">
   <span class="word-stream stream-orange"></span>
-  <span class="word-stream stream-green"></span>
   <span class="word-stream stream-blue"></span>
   <span class="word-stream stream-violet"></span>
-  <span class="word-stream stream-red"></span>
-  <span class="word-stream stream-white"></span>
 </div>
 <!-- ============ CABEÇALHO: logótipo, menu, língua, tema ============ -->
 <header class="top">
@@ -54,6 +51,8 @@
   </nav>
   <select id="lang" aria-label="Language"></select>
   <button id="theme" aria-label="Toggle light/dark theme">◐</button>
+  <button id="menu-toggle" class="menu-toggle" type="button" aria-label="Open section menu" aria-expanded="false" aria-controls="section-menu">☰</button>
+  <div id="section-menu" class="section-menu" hidden></div>
 </header>
 
 <main>
@@ -496,10 +495,10 @@
   <h2 data-icon="📝" data-i18n="t_changelog">Changelog and Roadmap</h2>
   <div class="grid two">
     <article class="card">
-      <h3>Version 1.0</h3>
-      <h4>Added</h4><ul><li>Speedometer and HUD</li><li>Widgets and themes</li><li>Premium</li></ul>
-      <h4>Changed</h4><ul><li>—</li></ul>
-      <h4>Fixed</h4><ul><li>—</li></ul>
+      <h3 data-i18n="news_version">Version 1.0</h3>
+      <h4 data-i18n="news_added">Added</h4><ul><li data-i18n="news_speedometer">Speedometer and HUD</li><li data-i18n="news_widgets_themes">Widgets and themes</li><li data-i18n="news_premium">Premium</li></ul>
+      <h4 data-i18n="news_changed">Changed</h4><ul><li>—</li></ul>
+      <h4 data-i18n="news_fixed">Fixed</h4><ul><li>—</li></ul>
     </article>
     <article class="card">
       <h3 data-i18n="roadmap_title">Roadmap</h3>
@@ -513,9 +512,8 @@
 <!-- ============ FAQ (acordeão) e manual rápido ============ -->
 <section id="faq">
   <h2 data-icon="❓" data-i18n="t_faq">FAQ</h2>
-  <details><summary>How accurate is the GPS?</summary><p>Add your answer here.</p></details>
-  <details><summary>Can I use it in HUD mode?</summary><p>Yes. Add details here.</p></details>
-  <details><summary>Does it work offline?</summary><p>Add your answer here.</p></details>
+  <!-- As perguntas e respostas (13 idiomas) vêm de assets/faq-i18n.js e são desenhadas aqui -->
+  <div id="faq-content" class="faq-content"></div>
   <h3 class="sub" data-i18n="quick_manual_title">Quick manual</h3>
   <div class="steps" data-i18n="quick_manual_content"><ol><li>Swipe to switch HUDs.</li><li>Open Settings using one of these methods:<ol><li>Long-press the clock in the upper-left corner.</li><li>Long-press the screen and select Open Settings.</li><li>Tap the Settings button beside the clock.</li></ol></li><li>Explore the options in each Settings tab. There are many!</li><li>A Premium subscription unlocks features as they are released.</li><li>In the Free version, spend credits to unlock paid features. Earn 5 credits by watching complete videos.</li><li>Long-press the screen for HUD options such as duplicate, delete, and export.</li></ol></div>
 </section>
@@ -616,8 +614,10 @@
 <div id="image-viewer" class="image-viewer" role="dialog" aria-modal="true" aria-label="Image viewer" aria-hidden="true" hidden>
   <button class="viewer-close" type="button" aria-label="Close image viewer">×</button>
   <button class="viewer-arrow viewer-prev" type="button" aria-label="Previous image">‹</button>
-  <figure><img class="viewer-image" alt=""><figcaption class="viewer-caption"></figcaption></figure>
-  <span class="viewer-count" aria-live="polite"></span>
+  <figure>
+    <img class="viewer-image" alt="">
+    <figcaption class="viewer-caption"><span class="viewer-count" aria-live="polite"></span><span class="viewer-title"></span></figcaption>
+  </figure>
   <button class="viewer-arrow viewer-next" type="button" aria-label="Next image">›</button>
 </div>
 <footer>
@@ -637,6 +637,7 @@
 </footer>
 <script src="assets/features.js"></script>
 <script src="assets/testers-i18n.js"></script>
+<script src="assets/faq-i18n.js"></script>
 <script src="assets/app.js"></script>
 </body>
 </html>
