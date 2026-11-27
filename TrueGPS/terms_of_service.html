@@ -1,33 +1,425 @@
-<!doctype html><html lang="pt" data-theme="dark"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><script>(function(){try{var q=new URLSearchParams(location.search);var t=q.get("theme")||localStorage.getItem("theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);var l=q.get("lang")||localStorage.getItem("lang");if(l){document.documentElement.lang=l==="br"?"pt-BR":l;}}catch(e){}})();</script><title>TrueGPS Speed — Termos de Serviço</title><link rel="icon" href="assets/logos/logo.png"><link rel="stylesheet" href="assets/style.css"><style>.terms-top{max-width:960px;margin:auto;padding:28px 20px 0;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap}.terms-main{max-width:960px;margin:auto;padding:42px 20px 72px}.terms-main h1{font-size:clamp(2rem,5vw,3.4rem)}.terms-main h2{font-size:1.35rem;margin:0 0 10px}.terms-main section{max-width:none;margin:0;padding:18px 0;border-bottom:1px solid var(--line)}.terms-main p{color:var(--tx2);line-height:1.75}.terms-main .intro{font-size:1.08rem}#terms-lang{font-size:.78rem}</style></head><body><header class="terms-top"><a class="brand" href="index.html"><img class="logo logo-dark" src="assets/logos/logo.png" alt="TrueGPS Speed" height="36"><img class="logo logo-light" src="assets/logos/logo0.png" alt="TrueGPS Speed" height="36"></a><select id="terms-lang" aria-label="Language"><option value="en">🇬🇧 English</option><option value="pt">🇵🇹 Português (Portugal)</option><option value="br">🇧🇷 Português (Brasil)</option><option value="fr">🇫🇷 Français</option><option value="es">🇪🇸 Español</option><option value="de">🇩🇪 Deutsch</option><option value="it">🇮🇹 Italiano</option><option value="ru">🇷🇺 Русский</option><option value="tr">🇹🇷 Türkçe</option><option value="id">🇮🇩 Bahasa Indonesia</option><option value="hi">🇮🇳 हिन्दी (Hindi)</option><option value="ja">🇯🇵 日本語</option><option value="ko">🇰🇷 한국어</option></select><button id="theme" type="button" aria-label="Toggle light/dark theme">◐</button></header><main id="terms-main" class="terms-main">
-<h1>Termos de Serviço</h1>
-<p class="intro">Em vigor desde 9 de novembro de 2026. Estes termos regulam a utilização do site e da aplicação Android TrueGPS Speed. Mantêm-se os direitos obrigatórios do consumidor.</p>
-<section><h2>1. Serviço</h2><p>A TrueGPS Speed é um velocímetro GPS e HUD personalizável, publicado sob o nome Laranjinha Software. As funcionalidades podem mudar.</p></section>
-<section><h2>2. Condução segura</h2><p>A aplicação é uma ferramenta visual auxiliar. Não substitui os instrumentos do veículo, a sinalização ou o julgamento do condutor. Configure-a com o veículo imobilizado, cumpra as regras de trânsito e nunca utilize o telemóvel enquanto conduz.</p></section>
-<section><h2>3. Informação GPS</h2><p>A velocidade e os dados de viagem dependem do dispositivo, do sinal, das definições e do ambiente e podem ser imprecisos ou estar atrasados. Não confie apenas na aplicação para decisões críticas de segurança, legais ou de navegação.</p></section>
-<section><h2>4. Compras</h2><p>As funcionalidades, os preços, os períodos de cobrança, as renovações e as condições de cancelamento são apresentados na Google Play ou antes da confirmação da compra. A Google Play processa as cobranças aplicáveis; mantêm-se os direitos do consumidor.</p></section>
-<section><h2>5. Utilização e propriedade</h2><p>Utilize o serviço legalmente. A aplicação, a marca, o software e os conteúdos originais estão protegidos. É concedido um direito pessoal, limitado e intransmissível de utilização do serviço.</p></section>
-<section><h2>6. Privacidade e serviços externos</h2></section>
-<section><h2>7. Disponibilidade e direitos</h2><p>Procuramos manter o serviço disponível, mas não garantimos o funcionamento ininterrupto nem a compatibilidade com todos os dispositivos. Mantêm-se os direitos e as responsabilidades que a lei não permita excluir. </p></section>
+<!doctype html>
+<html lang="pt" data-theme="dark">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</main><script src="assets/terms.js"></script><footer>
-  <div class="links">
-    <a data-icon="🏠" href="https://ktmlaranjinha.github.io/TrueGPS/">TrueGPS Home</a>
-    <a data-icon="▶️" href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed">Google Play</a>
-    <a data-icon="▶️" href="https://www.youtube.com/@TrueGPSSpeed">YouTube TrueGPS</a>
-    <a data-icon="▶️" href="https://www.youtube.com/@KTMLaranjinha">YouTube KTMLaranjinha</a>
-    <a data-icon="💻" href="https://github.com/KTMLaranjinha">GitHub</a>
-    <a id="footer-contact" data-icon="✉️" href="mailto:cjfmatos@gmail.com">Contact</a>
-    <a id="footer-support" data-icon="❤️" href="https://ktmlaranjinha.github.io/TrueGPS/#links">Support</a>
-    <a id="footer-products" data-icon="🛒" href="https://www.amazon.es/shop/ktmlaranjinha" rel="sponsored noopener">Recommended Products</a>
-    <a data-icon="🔒" href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/?lang=en&amp;theme=dark" onclick='this.href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/?lang="+encodeURIComponent(new URLSearchParams(location.search).get("lang")||"en")+"&amp;theme="+encodeURIComponent(document.documentElement.dataset.theme||"dark")'>Privacy Policy</a>
-    <a data-icon="📜" href="https://ktmlaranjinha.github.io/TrueGPS/terms_of_service.html?lang=en&amp;theme=dark" onclick='this.href="https://ktmlaranjinha.github.io/TrueGPS/terms_of_service.html?lang="+encodeURIComponent(new URLSearchParams(location.search).get("lang")||"en")+"&amp;theme="+encodeURIComponent(document.documentElement.dataset.theme||"dark")'>Terms of Service</a>
-  </div>
-  <p>© <span id="current-year">2026</span> TrueGPS Speed <span class="copyright-by">by <span>Laranjinha Software</span></span></p>
-</footer>
-<script>document.getElementById('current-year').textContent=new Date().getFullYear();</script>
-<script>(function(){var b=document.getElementById("theme"),r=document.documentElement,s=document.getElementById("terms-lang");if(!b)return;b.onclick=function(){var t=r.dataset.theme==="light"?"dark":"light";r.dataset.theme=t;try{localStorage.setItem("theme",t)}catch(e){}var q=new URLSearchParams(location.search);q.set("theme",t);if(!q.get("lang"))q.set("lang",s.value||"en");history.replaceState(null,"",location.pathname+"?"+q.toString())}})();</script></body></html>
+  <script>
+    (function () {
+      try {
+        var q = new URLSearchParams(location.search);
+        var t = q.get("theme") || localStorage.getItem("theme");
 
+        if (t === "light" || t === "dark") {
+          document.documentElement.setAttribute("data-theme", t);
+        }
 
+        var l = q.get("lang") || localStorage.getItem("lang");
 
+        if (l) {
+          document.documentElement.lang = l === "br" ? "pt-BR" : l;
+        }
+      } catch (e) {}
+    })();
+  </script>
 
+  <title>TrueGPS Speed — Termos de Serviço</title>
 
+  <link rel="icon" href="assets/logos/logo.png">
+  <link rel="stylesheet" href="assets/style.css">
+
+  <style>
+    /* =========================================================
+       CABEÇALHO
+       ========================================================= */
+
+    .terms-top {
+      max-width: 960px;
+      margin: auto;
+      padding: 28px 20px 0;
+
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: nowrap;
+      gap: 10px;
+    }
+
+    /* Logótipo */
+    .terms-top .brand {
+      display: flex;
+      align-items: center;
+      flex: 0 1 auto;
+      min-width: 0;
+      margin-right: auto;
+    }
+
+    .terms-top .brand img {
+      width: auto;
+      max-width: 190px;
+      height: 28.8px;
+      object-fit: contain;
+    }
+
+   /* Dropdown dos idiomas */
+
+	#terms-lang {
+	  flex: 0 0 auto;
+	  width: auto;
+	  max-width: min(45vw, 220px);
+	  height: 32px;
+	  min-height: 32px;
+	  padding: 6px 8px;
+
+	  border: 1px solid var(--line);
+	  border-radius: 10px;
+	  background: var(--card);
+	  color: var(--tx);
+
+	  font: inherit;
+	  font-size: .7rem;
+	  cursor: pointer;
+	}
+
+	/* Contorno laranja apenas quando selecionada */
+
+	#terms-lang:focus {
+	  outline: 2px solid #ff7a1a;
+	  outline-offset: -2px;
+	}
+
+    /* Botão do tema */
+    .terms-top #theme {
+      flex: 0 0 32px;
+      width: 32px;
+      min-width: 32px;
+      height: 32px;
+      min-height: 32px;
+      padding: 0;
+
+      display: grid;
+      place-items: center;
+
+      border: 1px solid var(--line);
+      border-radius: 10px;
+      background: var(--card);
+      color: var(--tx);
+
+      font: inherit;
+      line-height: 1;
+      cursor: pointer;
+    }
+
+    /* =========================================================
+       CONTEÚDO PRINCIPAL
+       ========================================================= */
+
+    .terms-main {
+      max-width: 960px;
+      margin: auto;
+      padding: 42px 20px 72px;
+    }
+
+    .terms-main h1 {
+      font-size: clamp(2rem, 5vw, 3.4rem);
+    }
+
+    .terms-main h2 {
+      font-size: 1.35rem;
+      margin: 0 0 10px;
+    }
+
+    .terms-main section {
+      max-width: none;
+      margin: 0;
+      padding: 18px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .terms-main p {
+      color: var(--tx2);
+      line-height: 1.75;
+    }
+
+    .terms-main .intro {
+      font-size: 1.08rem;
+    }
+
+    /* =========================================================
+       ADAPTAÇÃO A ECRÃS PEQUENOS
+       ========================================================= */
+
+    @media (max-width: 480px) {
+      .terms-top {
+        gap: 8px;
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+
+      .terms-top .brand img {
+        max-width: 145px;
+      }
+
+      #terms-lang {
+        max-width: 42vw;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- =======================================================
+       CABEÇALHO
+       ======================================================= -->
+
+  <header class="terms-top">
+
+    <a class="brand" href="index.html">
+      <img
+        class="logo logo-dark"
+        src="assets/logos/logo.png"
+        alt="TrueGPS Speed"
+        height="36"
+      >
+
+      <img
+        class="logo logo-light"
+        src="assets/logos/logo0.png"
+        alt="TrueGPS Speed"
+        height="36"
+      >
+    </a>
+
+    <select id="terms-lang" aria-label="Language">
+      <option value="en">🇬🇧 English</option>
+      <option value="pt">🇵🇹 Português (Portugal)</option>
+      <option value="br">🇧🇷 Português (Brasil)</option>
+      <option value="fr">🇫🇷 Français</option>
+      <option value="es">🇪🇸 Español</option>
+      <option value="de">🇩🇪 Deutsch</option>
+      <option value="it">🇮🇹 Italiano</option>
+      <option value="ru">🇷🇺 Русский</option>
+      <option value="tr">🇹🇷 Türkçe</option>
+      <option value="id">🇮🇩 Bahasa Indonesia</option>
+      <option value="hi">🇮🇳 हिन्दी (Hindi)</option>
+      <option value="ja">🇯🇵 日本語</option>
+      <option value="ko">🇰🇷 한국어</option>
+    </select>
+
+    <button
+      id="theme"
+      type="button"
+      aria-label="Toggle light/dark theme"
+    >◐</button>
+
+  </header>
+
+  <!-- =======================================================
+       CONTEÚDO DOS TERMOS DE SERVIÇO
+       ======================================================= -->
+
+  <main id="terms-main" class="terms-main">
+
+    <h1><span aria-hidden="true">📜 </span><span id="terms-title">Termos de Serviço</span></h1>
+
+    <p class="intro">
+      Em vigor desde 9 de novembro de 2026. Estes termos regulam a utilização
+      do site e da aplicação Android TrueGPS Speed. Mantêm-se os direitos
+      obrigatórios do consumidor.
+    </p>
+
+    <section>
+      <h2>1. Serviço</h2>
+      <p>
+        A TrueGPS Speed é um velocímetro GPS e HUD personalizável, publicado
+        sob o nome Laranjinha Software. As funcionalidades podem mudar.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Condução segura</h2>
+      <p>
+        A aplicação é uma ferramenta visual auxiliar. Não substitui os
+        instrumentos do veículo, a sinalização ou o julgamento do condutor.
+        Configure-a com o veículo imobilizado, cumpra as regras de trânsito
+        e nunca utilize o telemóvel enquanto conduz.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Informação GPS</h2>
+      <p>
+        A velocidade e os dados de viagem dependem do dispositivo, do sinal,
+        das definições e do ambiente e podem ser imprecisos ou estar atrasados.
+        Não confie apenas na aplicação para decisões críticas de segurança,
+        legais ou de navegação.
+      </p>
+    </section>
+
+    <section>
+      <h2>4. Compras</h2>
+      <p>
+        As funcionalidades, os preços, os períodos de cobrança, as renovações
+        e as condições de cancelamento são apresentados na Google Play ou
+        antes da confirmação da compra. A Google Play processa as cobranças
+        aplicáveis; mantêm-se os direitos do consumidor.
+      </p>
+    </section>
+
+    <section>
+      <h2>5. Utilização e propriedade</h2>
+      <p>
+        Utilize o serviço legalmente. A aplicação, a marca, o software e os
+        conteúdos originais estão protegidos. É concedido um direito pessoal,
+        limitado e intransmissível de utilização do serviço.
+      </p>
+    </section>
+
+    <section>
+      <h2>6. Privacidade e serviços externos</h2>
+    </section>
+
+    <section>
+      <h2>7. Disponibilidade e direitos</h2>
+      <p>
+        Procuramos manter o serviço disponível, mas não garantimos o
+        funcionamento ininterrupto nem a compatibilidade com todos os
+        dispositivos. Mantêm-se os direitos e as responsabilidades que a lei
+        não permita excluir.
+      </p>
+    </section>
+
+  </main>
+
+  <!-- =======================================================
+       RODAPÉ
+       ======================================================= -->
+
+  <footer>
+
+    <div class="links">
+
+      <a data-icon="🏠" href="https://ktmlaranjinha.github.io/TrueGPS/">
+        TrueGPS Home
+      </a>
+
+      <a
+        data-icon="▶️"
+        href="https://play.google.com/store/apps/details?id=com.laranjinha.truegpsspeed"
+      >
+        Google Play
+      </a>
+
+      <a data-icon="▶️" href="https://www.youtube.com/@TrueGPSSpeed">
+        YouTube TrueGPS
+      </a>
+
+      <a data-icon="▶️" href="https://www.youtube.com/@KTMLaranjinha">
+        YouTube KTMLaranjinha
+      </a>
+
+      <a data-icon="💻" href="https://github.com/KTMLaranjinha">
+        GitHub
+      </a>
+
+      <a
+        id="footer-contact"
+        data-icon="✉️"
+        href="mailto:cjfmatos@gmail.com"
+      >
+        Contact
+      </a>
+
+      <a
+        id="footer-support"
+        data-icon="❤️"
+        href="https://ktmlaranjinha.github.io/TrueGPS/#links"
+      >
+        Support
+      </a>
+
+      <a
+        id="footer-products"
+        data-icon="🛒"
+        href="https://www.amazon.es/shop/ktmlaranjinha"
+        rel="sponsored noopener"
+      >
+        Recommended Products
+      </a>
+
+      <a
+        data-icon="🔒"
+        href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/?lang=en&amp;theme=dark"
+        onclick='this.href="https://ktmlaranjinha.github.io/TrueGPS-Privacy/?lang="+encodeURIComponent(new URLSearchParams(location.search).get("lang")||"en")+"&amp;theme="+encodeURIComponent(document.documentElement.dataset.theme||"dark")'
+      >
+        Privacy Policy
+      </a>
+
+      <a
+        data-icon="📜"
+        href="https://ktmlaranjinha.github.io/TrueGPS/terms_of_service.html?lang=en&amp;theme=dark"
+        onclick='this.href="https://ktmlaranjinha.github.io/TrueGPS/terms_of_service.html?lang="+encodeURIComponent(new URLSearchParams(location.search).get("lang")||"en")+"&amp;theme="+encodeURIComponent(document.documentElement.dataset.theme||"dark")'
+      >
+        Terms of Service
+      </a>
+
+    </div>
+
+    <p>
+      © <span id="current-year">2026</span>
+      TrueGPS Speed
+      <span class="copyright-by">
+        by <span>Laranjinha Software</span>
+      </span>
+    </p>
+
+  </footer>
+
+  <!-- =======================================================
+       SCRIPTS
+       ======================================================= -->
+
+  <script src="assets/terms.js"></script>
+
+  <script>
+    document.getElementById("current-year").textContent =
+      new Date().getFullYear();
+  </script>
+
+  <script>
+    (function () {
+      var b = document.getElementById("theme");
+      var r = document.documentElement;
+      var s = document.getElementById("terms-lang");
+
+      if (!b) return;
+
+      b.onclick = function () {
+        var t = r.dataset.theme === "light" ? "dark" : "light";
+
+        r.dataset.theme = t;
+
+        try {
+          localStorage.setItem("theme", t);
+        } catch (e) {}
+
+        var q = new URLSearchParams(location.search);
+
+        q.set("theme", t);
+
+        if (!q.get("lang")) {
+          q.set("lang", s.value || "en");
+        }
+
+        history.replaceState(
+          null,
+          "",
+          location.pathname + "?" + q.toString()
+        );
+      };
+    })();
+  </script>
+
+</body>
+</html>

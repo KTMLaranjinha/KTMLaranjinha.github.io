@@ -396,8 +396,8 @@ function render(lang) {
     sections += '<section><h2>' + (i + 1) + '. ' + t[2][i] + '</h2><p>' + t[3][i] + '</p></section>';
   }
 
-  main.innerHTML =
-    '<h1>' + t[0] + '</h1>' +
+    main.innerHTML =
+    '<h1>📜 ' + t[0] + '</h1>' +
     '<p class="intro">' + t[1] + '</p>' +
     sections;
 }
